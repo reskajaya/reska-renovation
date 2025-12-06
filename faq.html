@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Pertanyaan Umum | Reska Renovation & Cleaning</title>
+    <meta name="description" content="Temukan jawaban lengkap untuk pertanyaan umum tentang jasa renovasi, cleaning, maintenance, proses kerja, dan garansi layanan Reska Renovation & Cleaning">
+    <meta name="keywords" content="FAQ renovasi, pertanyaan cleaning, tanya jasa maintenance, biaya renovasi, garansi jasa, proses kerja renovasi">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FAQ Lengkap - Reska Renovation & Cleaning">
+    <meta property="og:description" content="Jawaban profesional untuk semua pertanyaan tentang jasa renovasi dan cleaning">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS & Resources -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <style>
+        /* ===== FAQ SPECIFIC STYLES ===== */
+        :root {
+            --faq-primary: #0f4c5c;
+            --faq-accent: #ff6b35;
+            --faq-light: #f8f9fa;
+            --faq-gray: #64748b;
+            --faq-border: #e2e8f0;
+        }
+        
+        /* Hero Section */
+        .faq-hero {
+            background: linear-gradient(135deg, rgba(15, 76, 92, 0.95), rgba(29, 108, 125, 0.9));
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .faq-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faq-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+        }
+        
+        .hero-icon {
+            font-size: 60px;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* FAQ Categories */
+        .faq-categories {
+            padding: 30px 0;
+            background: var(--faq-light);
+            border-bottom: 1px solid var(--faq-border);
+            position: sticky;
+            top: 70px;
+            z-index: 99;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .category-tab {
+            padding: 12px 28px;
+            background: white;
+            border: 2px solid var(--faq-border);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--faq-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        
+        .category-tab:hover {
+            border-color: var(--faq-accent);
+            color: var(--faq-accent);
+            transform: translateY(-2px);
+        }
+        
+        .category-tab.active {
+            background: var(--faq-accent);
+            color: white;
+            border-color: var(--faq-accent);
+        }
+        
+        /* FAQ Container */
+        .faq-container {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq-category-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 180px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--faq-border);
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--faq-primary), var(--faq-primary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .category-title {
+            font-size: 28px;
+            color: var(--faq-primary);
+            margin: 0;
+        }
+        
+        .category-desc {
+            color: var(--faq-gray);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        /* FAQ Items */
+        .faq-items {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--faq-border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: var(--faq-accent);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: var(--faq-light);
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(255, 107, 53, 0.05);
+        }
+        
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--faq-primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .question-number {
+            background: var(--faq-primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .faq-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--faq-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--faq-primary);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-toggle {
+            background: var(--faq-accent);
+            border-color: var(--faq-accent);
+            color: white;
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 800px;
+            padding: 0 30px 30px;
+        }
+        
+        .answer-content {
+            padding-top: 20px;
+            border-top: 1px solid var(--faq-border);
+        }
+        
+        .answer-content p {
+            color: var(--faq-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .answer-content ul, .answer-content ol {
+            margin: 15px 0 15px 20px;
+            color: var(--faq-gray);
+        }
+        
+        .answer-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--faq-accent);
+            margin: 20px 0;
+        }
+        
+        .highlight strong {
+            color: var(--faq-accent);
+        }
+        
+        /* Search & Filter */
+        .faq-search {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            position: relative;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 18px 25px 18px 55px;
+            border: 2px solid var(--faq-border);
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--faq-accent);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--faq-gray);
+            font-size: 20px;
+        }
+        
+        /* Contact CTA */
+        .faq-cta {
+            background: linear-gradient(135deg, var(--faq-primary), #1a4f5c);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        
+        .faq-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .faq-cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Stats */
+        .faq-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--faq-accent);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--faq-gray);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .faq-hero h1 {
+                font-size: 36px;
+            }
+            
+            .category-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .category-tab {
+                flex-shrink: 0;
+            }
+            
+            .faq-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .faq-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .faq-hero h1 {
+                font-size: 32px;
+            }
+            
+            .faq-question {
+                padding: 20px;
+            }
+            
+            .question-text {
+                font-size: 16px;
+            }
+            
+            .faq-toggle {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .category-title {
+                font-size: 24px;
+            }
+            
+            .faq-cta h2 {
+                font-size: 30px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .faq-hero h1 {
+                font-size: 28px;
+            }
+            
+            .faq-hero p {
+                font-size: 16px;
+            }
+            
+            .hero-icon {
+                font-size: 50px;
+            }
+            
+            .question-text {
+                gap: 10px;
+            }
+            
+            .question-number {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .faq-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation for new items */
+        .faq-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease forwards;
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+        
+        .no-results i {
+            font-size: 60px;
+            color: var(--faq-gray);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .no-results h3 {
+            color: var(--faq-primary);
+            margin-bottom: 10px;
+        }
+        
+        .no-results p {
+            color: var(--faq-gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/6285210453311?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20ada%20pertanyaan%20tentang%20layanan%20Anda" 
+           target="_blank" 
+           class="whatsapp-button"
+           aria-label="Chat via WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Reska Renovation & Cleaning</h1>
+                        <p>Solusi Lengkap Perawatan Properti</p>
+                    </div>
+                </a>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+         <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Layanan</a>
+        <a href="gallery.html" class="nav-link">Portofolio</a>
+        <a href="packages.html " class="nav-link">Paket</a>
+        <a href="proses-kerja.html" class="nav-link">Proses Kerja</a>
+        <a href="tentang.html" class="nav-link">Tentang Kami</a>
+        <a href="index.html#contact" class="nav-link">Kontak</a>
+        <a href="faq.html" class="nav-link">Faq page</a>
+        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="container">
+            <div class="hero-icon">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h1>Pertanyaan yang Sering Diajukan</h1>
+            <p>Temukan jawaban lengkap untuk semua pertanyaan tentang jasa renovasi, cleaning, maintenance, proses kerja, dan garansi layanan kami. Jika pertanyaan Anda belum terjawab, jangan ragu untuk menghubungi kami.</p>
+            
+            <div class="faq-search">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input type="text" class="search-box" id="faqSearch" placeholder="Cari pertanyaan atau kata kunci...">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">
+                    <i class="fas fa-globe"></i> Semua Kategori
+                </button>
+                <button class="category-tab" data-category="renovasi">
+                    <i class="fas fa-home"></i> Renovasi
+                </button>
+                <button class="category-tab" data-category="cleaning">
+                    <i class="fas fa-broom"></i> Cleaning
+                </button>
+                <button class="category-tab" data-category="maintenance">
+                    <i class="fas fa-tools"></i> Maintenance
+                </button>
+                <button class="category-tab" data-category="harga">
+                    <i class="fas fa-dollar-sign"></i> Harga & Pembayaran
+                </button>
+                <button class="category-tab" data-category="garansi">
+                    <i class="fas fa-shield-alt"></i> Garansi
+                </button>
+                <button class="category-tab" data-category="proses">
+                    <i class="fas fa-project-diagram"></i> Proses Kerja
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Stats -->
+    <section class="container">
+        <div class="faq-stats">
+            <div class="stat-item">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">Pertanyaan Terjawab</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Kategori Layanan</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Konsultasi Gratis</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Kepuasan Klien</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Container -->
+    <section class="faq-container">
+        <div class="container">
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search"></i>
+                <h3>Tidak ditemukan hasil pencarian</h3>
+                <p>Coba gunakan kata kunci lain atau hubungi kami langsung untuk pertanyaan spesifik Anda.</p>
+                <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-primary mt-3">
+                    <i class="fab fa-whatsapp"></i> Tanya via WhatsApp
+                </a>
+            </div>
+
+            <!-- RENOVASI CATEGORY -->
+            <div class="faq-category-section" id="category-renovasi" data-category="renovasi">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <h2 class="category-title">Renovasi Rumah</h2>
+                        <p class="category-desc">Pertanyaan seputar jasa renovasi, konstruksi, dan perbaikan properti</p>
+                    </div>
+                </div>
+                
+                <div class="faq-items">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item" data-categories="renovasi">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">1</span>
+                                Apa saja jenis renovasi yang bisa ditangani oleh Reska Renovation?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Kami menangani berbagai jenis renovasi properti, termasuk:</p>
+                                <ul>
+                                    <li><strong>Renovasi Ringan:</strong> Pengecatan ulang, perbaikan keramik/ubin, penggantian aksesoris, perbaikan plafon, penambahan lampu</li>
+                                    <li><strong>Renovasi Kamar Mandi:</strong> Full renovasi kamar mandi, penggantian saniter, pemasangan shower, waterproofing</li>
+                                    <li><strong>Renovasi Dapur:</strong> Pembuatan kitchen set, penataan ulang dapur, instalasi exhaust, backsplash</li>
+                                    <li><strong>Renovasi Ruangan:</strong> Pembuatan partisi, pergantian lantai, pemasangan wallpaper, renovasi plafon</li>
+                                    <li><strong>Renovasi Eksterior:</strong> Pengecatan luar, perbaikan pagar, penambahan kanopi, waterproofing atap</li>
+                                    <li><strong>Perbaikan Struktural:</strong> Perbaikan retakan dinding, perkuatan struktur, perbaikan kebocoran</li>
+                                </ul>
+                                <div class="highlight">
+                                    <strong>Catatan:</strong> Untuk renovasi besar yang melibatkan perubahan struktur utama bangunan (misal: bongkar dinding struktural, penambahan lantai), kami akan merekomendasikan konsultan struktur.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item" data-categories="renovasi,proses">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">2</span>
+                                Berapa lama waktu yang dibutuhkan untuk renovasi kamar mandi standar?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Waktu renovasi kamar mandi bervariasi tergantung kompleksitas pekerjaan:</p>
+                                <ul>
+                                    <li><strong>Renovasi Minimal (7-10 hari kerja):</strong> Penggantian saniter, perbaikan keramik, waterproofing ringan</li>
+                                    <li><strong>Renovasi Standar (10-15 hari kerja):</strong> Full renovasi dengan penggantian semua material, instalasi baru, perubahan layout minimal</li>
+                                    <li><strong>Renovasi Premium (15-25 hari kerja):</strong> Perubahan layout signifikan, pemasangan material premium, custom furniture, sistem plumbing kompleks</li>
+                                </ul>
+                                <p><strong>Alur waktu standar:</strong></p>
+                                <ol>
+                                    <li>Hari 1-2: Pembongkaran & persiapan</li>
+                                    <li>Hari 3-5: Pekerjaan plumbing & electrical</li>
+                                    <li>Hari 6-10: Waterproofing & pemasangan keramik</li>
+                                    <li>Hari 11-12: Pemasangan saniter & aksesoris</li>
+                                    <li>Hari 13-14: Finishing & cleaning</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item" data-categories="renovasi,harga">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">3</span>
+                                Apakah biaya material sudah termasuk dalam penawaran renovasi?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Kami menawarkan <strong>3 pilihan paket material</strong> untuk kenyamanan Anda:</p>
+                                
+                                <p><strong>1. Paket All-Inclusive (Rekomendasi)</strong></p>
+                                <ul>
+                                    <li>✅ <strong>Sudah termasuk material standar</strong> (pilihan kualitas baik)</li>
+                                    <li>✅ Kami yang menyediakan dan membeli material</li>
+                                    <li>✅ Garansi material dari supplier resmi</li>
+                                    <li>✅ Tidak perlu repot belanja material</li>
+                                    <li>💡 Cocok untuk Anda yang sibuk dan ingin praktis</li>
+                                </ul>
+                                
+                                <p><strong>2. Paket Jasa + Material Pilihan Anda</strong></p>
+                                <ul>
+                                    <li>✅ Kami berikan spesifikasi material yang dibutuhkan</li>
+                                    <li>✅ Anda yang membeli material sesuai spesifikasi kami</li>
+                                    <li>✅ Kami hanya bertanggung jawab untuk pekerjaan jasa</li>
+                                    <li>💡 Cocok jika Anda ingin kontrol penuh terhadap pemilihan material</li>
+                                </ul>
+                                
+                                <p><strong>3. Paket Jasa Saja</strong></p>
+                                <ul>
+                                    <li>✅ Hanya biaya jasa pekerjaan</li>
+                                    <li>✅ Semua material disediakan oleh Anda</li>
+                                    <li>✅ Kami hanya bertanggung jawab untuk eksekusi</li>
+                                    <li>⚠️ Garansi hanya untuk pekerjaan, tidak termasuk material</li>
+                                </ul>
+                                
+                                <div class="highlight">
+                                    <strong>Transparansi Harga:</strong> Dalam penawaran kami, kami akan memberikan breakdown rinci antara biaya material dan biaya jasa, sehingga Anda tahu persis untuk apa Anda membayar.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item" data-categories="renovasi,proses">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">4</span>
+                                Bisakah kami tetap tinggal di rumah selama proses renovasi?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Tentu bisa, dengan beberapa pertimbangan:</p>
+                                
+                                <p><strong>Renovasi Parsial (Bisa Tinggal)</strong></p>
+                                <ul>
+                                    <li>Renovasi 1 ruangan tertentu</li>
+                                    <li>Pengecatan sebagian</li>
+                                    <li>Perbaikan kecil di area terbatas</li>
+                                    <li>Kami akan isolasi area kerja dengan plastik/terpal</li>
+                                </ul>
+                                
+                                <p><strong>Renovasi Besar (Disarankan Kos Sementara)</strong></p>
+                                <ul>
+                                    <li>Renovasi seluruh rumah</li>
+                                    <li>Renovasi kamar mandi utama (satu-satunya)</li>
+                                    <li>Renovasi dapur utama</li>
+                                    <li>Pekerjaan yang menimbulkan debu/bau menyengat</li>
+                                </ul>
+                                
+                                <p><strong>Tips jika tetap tinggal:</strong></p>
+                                <ol>
+                                    <li>Persiapkan ruangan khusus yang tidak direnovasi</li>
+                                    <li>Pack barang-barang berharga dan mudah pecah</li>
+                                    <li>Komunikasikan jam kerja dengan kami</li>
+                                    <li>Sediakan akses air dan listrik cadangan</li>
+                                </ol>
+                                
+                                <div class="highlight">
+                                    <strong>Rekomendasi Kami:</strong> Untuk renovasi besar (> 2 minggu), kami sarankan untuk kos sementara demi kenyamanan dan keselamatan keluarga. Kami bisa membantu rekomendasi tempat kos atau hotel kerja sama.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLEANING CATEGORY -->
+            <div class="faq-category-section" id="category-cleaning" data-category="cleaning">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div>
+                        <h2 class="category-title">General & Deep Cleaning</h2>
+                        <p class="category-desc">Pertanyaan seputar jasa kebersihan rumah, kantor, dan properti</p>
+                    </div>
+                </div>
+                
+                <div class="faq-items">
+                    <!-- FAQ 5 -->
+                    <div class="faq-item" data-categories="cleaning">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">5</span>
+                                Apa perbedaan antara General Cleaning dan Deep Cleaning?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Berikut perbedaan mendetail antara kedua layanan kami:</p>
+                                
+                                <div style="overflow-x: auto;">
+                                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                                        <thead>
+                                            <tr style="background: var(--faq-primary); color: white;">
+                                                <th style="padding: 15px; text-align: left;">Aspek</th>
+                                                <th style="padding: 15px; text-align: left;">General Cleaning</th>
+                                                <th style="padding: 15px; text-align: left;">Deep Cleaning</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Fokus Pembersihan</td>
+                                                <td style="padding: 15px;">Permukaan yang terlihat</td>
+                                                <td style="padding: 15px;">Semua area termasuk tersembunyi</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Durasi</td>
+                                                <td style="padding: 15px;">4-8 jam</td>
+                                                <td style="padding: 15px;">1-3 hari</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Tim</td>
+                                                <td style="padding: 15px;">2-3 orang</td>
+                                                <td style="padding: 15px;">3-5 orang (specialist)</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Alat</td>
+                                                <td style="padding: 15px;">Standar cleaning tools</td>
+                                                <td style="padding: 15px;">Industrial grade + steam</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Disinfeksi</td>
+                                                <td style="padding: 15px;">Basic disinfection</td>
+                                                <td style="padding: 15px;">Full sterilization</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Area Sulit</td>
+                                                <td style="padding: 15px;">Tidak termasuk</td>
+                                                <td style="padding: 15px;">Termasuk (belakang lemari, bawah kulkas, dll)</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--faq-border);">
+                                                <td style="padding: 15px; font-weight: 600;">Biaya</td>
+                                                <td style="padding: 15px;">Rp 200.000 - 500.000</td>
+                                                <td style="padding: 15px;">Rp 800.000 - 2.500.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 15px; font-weight: 600;">Frekuensi</td>
+                                                <td style="padding: 15px;">Mingguan/Bulanan</td>
+                                                <td style="padding: 15px;">6 bulan - 1 tahun sekali</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="highlight">
+                                    <strong>Kapan memilih Deep Cleaning?</strong> Saat pindah rumah, setelah renovasi, sebelum acara besar, untuk properti yang lama tidak dihuni, atau ketika ada masalah kebersihan serius (jamur, tungau, dll).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item" data-categories="cleaning,harga">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">6</span>
+                                Bagaimana cara menghitung biaya cleaning service?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Kami menggunakan <strong>3 parameter utama</strong> dalam kalkulasi biaya:</p>
+                                
+                                <p><strong>1. Luas Area & Jumlah Ruangan</strong></p>
+                                <ul>
+                                    <li>Kamar tidur: Rp 150.000 - 250.000 per kamar</li>
+                                    <li>Ruang tamu: Rp 200.000 - 350.000</li>
+                                    <li>Dapur: Rp 180.000 - 300.000</li>
+                                    <li>Kamar mandi: Rp 120.000 - 200.000 per unit</li>
+                                    <li>Area tambahan (garasi, teras): Rp 100.000 - 200.000</li>
+                                </ul>
+                                
+                                <p><strong>2. Tingkat Kekotoran</strong></p>
+                                <ul>
+                                    <li>Level 1 (Rutin): +0% dari harga dasar</li>
+                                    <li>Level 2 (Sedang): +15-25% dari harga dasar</li>
+                                    <li>Level 3 (Sangat kotor): +40-60% dari harga dasar</li>
+                                    <li>Level 4 (Pasca renovasi): +80-120% dari harga dasar</li>
+                                </ul>
+                                
+                                <p><strong>3. Layanan Tambahan</strong></p>
+                                <ul>
+                                    <li>Cuci karpet: Rp 25.000 - 50.000 per m²</li>
+                                    <li>Cuci sofa: Rp 150.000 - 400.000 per unit</li>
+                                    <li>Cuci jendela/kaca: Rp 30.000 - 80.000 per m²</li>
+                                    <li>Disinfeksi khusus: Rp 100.000 - 300.000 per ruang</li>
+                                    <li>Pembersihan AC: Rp 150.000 - 350.000 per unit</li>
+                                </ul>
+                                
+                                <div class="highlight">
+                                    <strong>Contoh Perhitungan:</strong><br>
+                                    Rumah 3 kamar (level kotoran sedang) + 2 kamar mandi + ruang tamu:<br>
+                                    (3 × 200.000) + (2 × 160.000) + 250.000 = Rp 1.170.000 + 20% (tingkat kotoran) = <strong>Rp 1.404.000</strong>
+                                </div>
+                                
+                                <p><strong>Survey Gratis:</strong> Untuk harga akurat, kami selalu melakukan survey gratis terlebih dahulu untuk melihat kondisi sebenarnya.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="faq-item" data-categories="cleaning,garansi">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">7</span>
+                                Apakah bahan pembersih yang digunakan aman untuk anak dan hewan peliharaan?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p><strong>YA, 100% AMAN.</strong> Kami sangat memperhatikan keamanan bahan pembersih yang digunakan.</p>
+                                
+                                <p><strong>Standard Cleaning Products:</strong></p>
+                                <ul>
+                                    <li>✅ <strong>Eco-friendly cleaners:</strong> Ramah lingkungan, biodegradable</li>
+                                    <li>✅ <strong>Non-toxic:</strong> Tidak mengandung bahan beracun (ammonia, chlorine, phthalates)</li>
+                                    <li>✅ <strong>Hypoallergenic:</strong> Aman untuk penderita alergi</li>
+                                    <li>✅ <strong>Vegan-friendly:</strong> Tidak diuji pada hewan</li>
+                                    <li>✅ <strong>Certified:</strong> Memiliki sertifikasi keamanan internasional</li>
+                                </ul>
+                                
+                                <p><strong>Special Situations:</strong></p>
+                                <ul>
+                                    <li><strong>Untuk rumah dengan bayi:</strong> Kami gunakan pembersih khusus baby-safe</li>
+                                    <li><strong>Untuk pemilik hewan peliharaan:</strong> Kami gunakan formula pet-friendly</li>
+                                    <li><strong>Untuk penderita asma/alergi:</strong> Kami gunakan produk fragrance-free</li>
+                                </ul>
+                                
+                                <p><strong>Prosedur Keamanan:</strong></p>
+                                <ol>
+                                    <li>Kami akan tanyakan kondisi khusus sebelum mulai bekerja</li>
+                                    <li>Kami bawa Material Safety Data Sheet (MSDS) untuk semua produk</li>
+                                    <li>Kami ventilasi ruangan selama dan setelah proses cleaning</li>
+                                    <li>Kami berikan informasi waktu aman untuk kembali ke ruangan</li>
+                                </ol>
+                                
+                                <div class="highlight">
+                                    <strong>Anda bisa request:</strong> Jika Anda memiliki produk tertentu yang diinginkan atau alergi terhadap bahan tertentu, beri tahu kami dan kami akan menyesuaikan.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAINTENANCE CATEGORY -->
+            <div class="faq-category-section" id="category-maintenance" data-category="maintenance">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h2 class="category-title">Property Maintenance</h2>
+                        <p class="category-desc">Pertanyaan seputar perawatan rutin dan perbaikan properti</p>
+                    </div>
+                </div>
+                
+                <div class="faq-items">
+                    <!-- FAQ 8 -->
+                    <div class="faq-item" data-categories="maintenance">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">8</span>
+                                Apa saja yang termasuk dalam paket maintenance rutin?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Paket maintenance rutin kami mencakup <strong>3 level layanan</strong>:</p>
+                                
+                                <p><strong>1. Paket Basic (Rp 500.000/bulan)</strong></p>
+                                <ul>
+                                    <li>✅ Kunjungan 2x sebulan</li>
+                                    <li>✅ Pengecekan plumbing & listrik dasar</li>
+                                    <li>✅ Perawatan taman minimal</li>
+                                    <li>✅ Pembersihan area umum</li>
+                                    <li>✅ Laporan bulanan via WhatsApp</li>
+                                </ul>
+                                
+                                <p><strong>2. Paket Standard (Rp 850.000/bulan)</strong></p>
+                                <ul>
+                                    <li>✅ Semua benefit Basic</li>
+                                    <li>✅ Kunjungan 4x sebulan (mingguan)</li>
+                                    <li>✅ Pengecekan AC & ventilation</li>
+                                    <li>✅ Perawatan taman lengkap</li>
+                                    <li>✅ Emergency response 12 jam</li>
+                                    <li>✅ Laporan detail dengan foto</li>
+                                </ul>
+                                
+                                <p><strong>3. Paket Premium (Rp 1.500.000/bulan)</strong></p>
+                                <ul>
+                                    <li>✅ Semua benefit Standard</li>
+                                    <li>✅ Kunjungan sesuai kebutuhan (unlimited)</li>
+                                    <li>✅ Preventive maintenance lengkap</li>
+                                    <li>✅ Emergency response 24/7</li>
+                                    <li>✅ Konsultasi gratis untuk perbaikan</li>
+                                    <li>✅ Biaya material kecil gratis (≤ Rp 200.000)</li>
+                                    <li>✅ Laporan profesional dengan rekomendasi</li>
+                                </ul>
+                                
+                                <div class="highlight">
+                                    <strong>Fleksibilitas:</strong> Paket bisa dikustomisasi sesuai kebutuhan spesifik properti Anda. Untuk gedung komersial atau kompleks perumahan, kami berikan harga khusus.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 9 -->
+                    <div class="faq-item" data-categories="maintenance,proses">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">9</span>
+                                Apakah tersedia layanan emergency/darurat?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p><strong>YA, kami memiliki layanan emergency 24/7</strong> untuk situasi darurat properti:</p>
+                                
+                                <p><strong>Emergency Situations yang Kami Tangani:</strong></p>
+                                <ul>
+                                    <li>🆘 <strong>Kebocoran air parah</strong> - Response time: 1-2 jam</li>
+                                    <li>🆘 <strong>Listrik padam/mati total</strong> - Response time: 2-3 jam</li>
+                                    <li>🆘 <strong>Pipa air pecah</strong> - Response time: 1-2 jam</li>
+                                    <li>🆘 <strong>Atap bocor saat hujan</strong> - Response time: 2-4 jam</li>
+                                    <li>🆘 <strong>Pintu/jendela terkunci</strong> - Response time: 1-2 jam</li>
+                                    <li>🆘 <strong>Saluran air mampet parah</strong> - Response time: 2-3 jam</li>
+                                </ul>
+                                
+                                <p><strong>Biaya Emergency Service:</strong></p>
+                                <ul>
+                                    <li>Jam kerja (08:00-17:00): +30% dari tarif normal</li>
+                                    <li>Malam hari (17:00-22:00): +50% dari tarif normal</li>
+                                    <li>Dini hari (22:00-08:00): +80% dari tarif normal</li>
+                                    <li>Hari libur: +100% dari tarif normal</li>
+                                </ul>
+                                
+                                <p><strong>Prosedur Emergency Call:</strong></p>
+                                <ol>
+                                    <li>Telepon/WhatsApp ke 0852-1045-3311</li>
+                                    <li>Sebutkan "EMERGENCY" di awal percakapan</li>
+                                    <li>Jelaskan situasi darurat secara singkat</li>
+                                    <li>Berikan alamat lengkap dan kontak yang bisa dihubungi</li>
+                                    <li>Jika ada, kirim foto/video situasi</li>
+                                    <li>Tim kami akan konfirmasi estimasi waktu kedatangan</li>
+                                </ol>
+                                
+                                <div class="highlight">
+                                    <strong>Tip:</strong> Untuk klien paket maintenance premium, layanan emergency sudah termasuk tanpa biaya tambahan (kecuali material pengganti).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HARGA & PEMBAYARAN CATEGORY -->
+            <div class="faq-category-section" id="category-harga" data-category="harga">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div>
+                        <h2 class="category-title">Harga & Pembayaran</h2>
+                        <p class="category-desc">Pertanyaan seputar biaya, penawaran, dan metode pembayaran</p>
+                    </div>
+                </div>
+                
+                <div class="faq-items">
+                    <!-- FAQ 10 -->
+                    <div class="faq-item" data-categories="harga">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">10</span>
+                                Bagaimana sistem pembayaran yang berlaku?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Kami menerapkan <strong>sistem pembayaran bertahap</strong> yang transparan dan aman:</p>
+                                
+                                <p><strong>Untuk Project Renovasi (> Rp 5.000.000):</strong></p>
+                                <ol>
+                                    <li><strong>DP 30%</strong> - Dibayar setelah kontrak ditandatangani dan sebelum pekerjaan dimulai</li>
+                                    <li><strong>Progress 40%</strong> - Dibayar saat pekerjaan mencapai 50% penyelesaian</li>
+                                    <li><strong>Pelunasan 30%</strong> - Dibayar setelah pekerjaan selesai 100% dan disetujui klien</li>
+                                </ol>
+                                
+                                <p><strong>Untuk Layanan Cleaning & Maintenance:</strong></p>
+                                <ul>
+                                    <li><strong>One-time service:</strong> Pembayaran setelah pekerjaan selesai</li>
+                                    <li><strong>Paket rutin:</strong> Pembayaran di awal bulan/bulan berjalan</li>
+                                    <li><strong>Emergency service:</strong> Pembayaran setelah perbaikan selesai</li>
+                                </ul>
+                                
+                                <p><strong>Metode Pembayaran yang Diterima:</strong></p>
+                                <ul>
+                                    <li>💰 <strong>Transfer Bank:</strong> BCA, Mandiri, BNI, BRI</li>
+                                    <li>📱 <strong>E-Wallet:</strong> OVO, GoPay, DANA, ShopeePay</li>
+                                    <li>💳 <strong>QRIS:</strong> Scan QR code untuk pembayaran mudah</li>
+                                    <li>💵 <strong>Tunai:</strong> Diterima di lokasi dengan kwitansi resmi</li>
+                                </ul>
+                                
+                                <div class="highlight">
+                                    <strong>Invoice Resmi:</strong> Setiap pembayaran akan disertai dengan invoice resmi Reska Renovation & Cleaning yang dapat digunakan untuk keperluan pajak atau reimbursement.
+                                </div>
+                                
+                                <p><strong>Potongan/Diskon:</strong></p>
+                                <ul>
+                                    <li>Pembayaran lunas di awal: Diskon 5% (kecuali emergency)</li>
+                                    <li>Project referral: Diskon 10% untuk project selanjutnya</li>
+                                    <li>Klien corporate: Termin khusus (net 7/14/30)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 11 -->
+                    <div class="faq-item" data-categories="harga">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">11</span>
+                                Apakah ada biaya survey/konsultasi?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p><strong>KONSULTASI GRATIS 100%</strong> untuk semua calon klien.</p>
+                                
+                                <p><strong>Layanan Gratis Tanpa Biaya:</strong></p>
+                                <ul>
+                                    <li>✅ <strong>Konsultasi via WhatsApp/Telepon:</strong> Tidak dibatasi waktu</li>
+                                    <li>✅ <strong>Survey lokasi untuk estimasi:</strong> Area Bandung & sekitarnya</li>
+                                    <li>✅ <strong>Analisis kebutuhan:</strong> Termasuk saran dan rekomendasi</li>
+                                    <li>✅ <strong>Penawaran harga detail:</strong> Breakdown lengkap biaya</li>
+                                    <li>✅ <strong>Konsultasi desain dasar:</strong> Untuk renovasi sederhana</li>
+                                </ul>
+                                
+                                <p><strong>Kapan Ada Biaya Survey?</strong></p>
+                                <ul>
+                                    <li>📍 <strong>Lokasi > 50km dari Bandung:</strong> Biaya transportasi negotiable</li>
+                                    <li>📐 <strong>Survey detail untuk project besar:</strong> Jika membutuhkan tim ahli khusus</li>
+                                    <li>🏢 <strong>Gedung komersial besar:</strong> Untuk survey komprehensif dengan report detail</li>
+                                </ul>
+                                
+                                <p><strong>Catatan Penting:</strong></p>
+                                <ol>
+                                    <li>Biaya survey (jika ada) akan dikomunikasikan terlebih dahulu sebelum kami datang</li>
+                                    <li>Biaya survey akan di-komit/dipotong dari total biaya project jika deal bekerja sama</li>
+                                    <li>Untuk project di atas Rp 50 juta, survey komprehensif termasuk dalam paket</li>
+                                </ol>
+                                
+                                <div class="highlight">
+                                    <strong>Untuk 95% klien kami, survey TANPA BIAYA.</strong> Kami percaya transparansi dan kepercayaan adalah dasar hubungan baik dengan klien.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GARANSI CATEGORY -->
+            <div class="faq-category-section" id="category-garansi" data-category="garansi">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h2 class="category-title">Garansi & After Service</h2>
+                        <p class="category-desc">Pertanyaan seputar garansi pekerjaan dan layanan purna jual</p>
+                    </div>
+                </div>
+                
+                <div class="faq-items">
+                    <!-- FAQ 12 -->
+                    <div class="faq-item" data-categories="garansi">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">12</span>
+                                Berapa lama garansi untuk pekerjaan renovasi?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Kami memberikan <strong>garansi bertingkat</strong> sesuai jenis pekerjaan:</p>
+                                
+                                <p><strong>1. Garansi Pekerjaan (Workmanship Warranty)</strong></p>
+                                <ul>
+                                    <li>Renovasi ringan: <strong>6 bulan</strong></li>
+                                    <li>Renovasi kamar mandi: <strong>1 tahun</strong></li>
+                                    <li>Renovasi dapur: <strong>1 tahun</strong></li>
+                                    <li>Renovasi struktural: <strong>2 tahun</strong></li>
+                                    <li>Waterproofing: <strong>3 tahun</strong></li>
+                                </ul>
+                                
+                                <p><strong>2. Garansi Material (Material Warranty)</strong></p>
+                                <ul>
+                                    <li>Material standar kami: <strong>sesuai garansi produsen</strong></li>
+                                    <li>Material pilihan klien: <strong>garansi dari supplier</strong></li>
+                                    <li>Kami membantu klaim garansi material jika diperlukan</li>
+                                </ul>
+                                
+                                <p><strong>Apa yang Dicover Garansi Kami?</strong></p>
+                                <ul>
+                                    <li>✅ Kerusakan akibat kesalahan pekerjaan</li>
+                                    <li>✅ Kebocoran dari instalasi kami</li>
+                                    <li>✅ Retak/peeling pada finishing karya kami</li>
+                                    <li>✅ Masalah pada instalasi listrik/plumbing kami</li>
+                                </ul>
+                                
+                                <p><strong>Apa yang Tidak Dicover?</strong></p>
+                                <ul>
+                                    <li>❌ Kerusakan akibat bencana alam</li>
+                                    <li>❌ Perubahan/renovasi oleh pihak lain</li>
+                                    <li>❌ Keausan normal (wear and tear)</li>
+                                    <li>❌ Kerusakan akibat salah penggunaan</li>
+                                </ul>
+                                
+                                <div class="highlight">
+                                    <strong>Proses Klaim Garansi:</strong> Hubungi kami via WhatsApp, jelaskan masalah, kirim foto/video, kami akan jadwalkan kunjungan inspeksi (gratis), dan perbaikan akan dilakukan jika masuk kategori garansi.
+                                </div>
+                                
+                                <p><strong>Dokumen Garansi:</strong> Setiap project selesai, Anda akan menerima:</p>
+                                <ol>
+                                    <li>Sertifikat garansi dengan nomor unik</li>
+                                    <li>Foto dokumentasi pekerjaan</li>
+                                    <li>As-built drawing untuk instalasi tersembunyi</li>
+                                    <li>Kontak emergency untuk klaim garansi</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 13 -->
+                    <div class="faq-item" data-categories="garansi">
+                        <div class="faq-question">
+                            <div class="question-text">
+                                <span class="question-number">13</span>
+                                Bagaimana jika ada masalah setelah garansi habis?
+                            </div>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p>Kami <strong>tetap siap membantu</strong> bahkan setelah garansi habis!</p>
+                                
+                                <p><strong>Layanan After-Warranty:</strong></p>
+                                <ul>
+                                    <li>✅ <strong>Konsultasi gratis</strong> untuk diagnosa masalah</li>
+                                    <li>✅ <strong>Prioritas penjadwalan</strong> untuk klien lama</li>
+                                    <li>✅ <strong>Diskon 20%</strong> untuk perbaikan setelah garansi</li>
+                                    <li>✅ <strong>Spare part original</strong> dengan harga khusus</li>
+                                    <li>✅ <strong>Extended warranty option</strong> untuk perbaikan baru</li>
+                                </ul>
+                                
+                                <p><strong>Kenapa Kami Tetap Support?</strong></p>
+                                <ol>
+                                    <li>Kami kenal properti Anda (ada dokumentasi lengkap)</li>
+                                    <li>Kami tahu sejarah pekerjaan yang dilakukan</li>
+                                    <li>Kami punya spare part yang kompatibel</li>
+                                    <li>Kami peduli dengan kepuasan jangka panjang klien</li>
+                                </ol>
+                                
+                                <p><strong>Biaya After-Warranty Service:</strong></p>
+                                <ul>
+                                    <li>Biaya kunjungan: Rp 150.000 (gratis untuk project > Rp 5 juta sebelumnya)</li>
+                                    <li>Biaya perbaikan: Material + jasa dengan diskon 20%</li>
+                                    <li>Garansi perbaikan: 3 bulan untuk pekerjaan setelah garansi</li>
+                                </ul>
+                                
+                                <div class="highlight">
+                                    <strong>Kami Bangun Hubungan Jangka Panjang:</strong> Bagi kami, selesainya project bukan akhir hubungan, tetapi awal partnership jangka panjang. 65% klien kami adalah repeat customer atau referral dari klien puas.
+                                </div>
+                                
+                                <p><strong>Tips Maintenance Pasca Garansi:</strong></p>
+                                <ol>
+                                    <li>Simpan dokumentasi project dengan baik</li>
+                                    <li>Lakukan maintenance rutin</li>
+                                    <li>Hindari modifikasi oleh tukang yang tidak dikenal</li>
+                                    <li>Hubungi kami untuk konsultasi sebelum masalah menjadi serius</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="faq-cta">
+        <div class="container">
+            <h2>Masih Ada Pertanyaan?</h2>
+            <p>Jika pertanyaan Anda belum terjawab di FAQ ini atau Anda membutuhkan konsultasi khusus untuk project Anda, tim kami siap membantu 24/7 melalui WhatsApp.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/6285210453311?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20ada%20pertanyaan%20yang%20belum%20terjawab%20di%20FAQ" 
+                   target="_blank" 
+                   class="btn" 
+                   style="background: #25D366; color: white; padding: 16px 35px;">
+                    <i class="fab fa-whatsapp"></i> Tanya via WhatsApp
+                </a>
+                <a href="contact.html" class="btn btn-outline" style="color: white; border-color: white; padding: 16px 35px;">
+                    <i class="fas fa-phone-alt"></i> Hubungi Kami
+                </a>
+                <a href="portfolio.html" class="btn btn-outline" style="color: white; border-color: white; padding: 16px 35px;">
+                    <i class="fas fa-images"></i> Lihat Portofolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Reska Renovation & Cleaning menyediakan jasa renovasi, perawatan properti, dan general cleaning profesional dengan hasil maksimal dan harga terjangkau sejak 2020.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="index.html">Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html">Layanan</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="portfolio.html">Portofolio</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="packages.html">Paket</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="tentang.html">Tentang Kami</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="faq.html">FAQ</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Layanan</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#renovasi">Renovasi Rumah</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#cleaning">General Cleaning</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#maintenance">Property Maintenance</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#deep-cleaning">Deep Cleaning</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="proses-kerja.html">Proses Kerja</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 class="footer-title">Kontak</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> 0852-1045-3311</li>
+                        <li><i class="fas fa-envelope"></i> reskajaya34@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Parung Bogor, Jawa Barat</li>
+                        <li><i class="fas fa-clock"></i> Senin - Sabtu: 08:00 - 18:00</li>
+                        <li><i class="fas fa-headset"></i> Emergency: 24/7 via WhatsApp</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Reska Renovation & Cleaning. Semua hak dilindungi undang-undang.</p>
+                <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b35;"></i> untuk properti Indonesia yang lebih baik</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // FAQ Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.closest('.faq-item');
+                    faqItem.classList.toggle('active');
+                });
+            });
+
+            // Category Filter
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const categorySections = document.querySelectorAll('.faq-category-section');
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Update active tab
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    const selectedCategory = tab.dataset.category;
+                    
+                    // Show/hide categories
+                    if (selectedCategory === 'all') {
+                        categorySections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                        faqItems.forEach(item => {
+                            item.style.display = 'block';
+                        });
+                    } else {
+                        categorySections.forEach(section => {
+                            if (section.dataset.category === selectedCategory) {
+                                section.style.display = 'block';
+                                // Scroll to category
+                                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } else {
+                                section.style.display = 'none';
+                            }
+                        });
+                    }
+                    
+                    // Hide no results message
+                    document.getElementById('noResults').style.display = 'none';
+                });
+            });
+
+            // Search Functionality
+            const searchInput = document.getElementById('faqSearch');
+            const noResults = document.getElementById('noResults');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase().trim();
+                let hasResults = false;
+                
+                if (searchTerm.length < 2) {
+                    // Show all when search term is short
+                    faqItems.forEach(item => {
+                        item.style.display = 'block';
+                        categorySections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                    });
+                    noResults.style.display = 'none';
+                    return;
+                }
+                
+                faqItems.forEach(item => {
+                    const questionText = item.querySelector('.question-text').textContent.toLowerCase();
+                    const answerText = item.querySelector('.answer-content').textContent.toLowerCase();
+                    
+                    if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        hasResults = true;
+                        
+                        // Show parent category
+                        const categories = item.dataset.categories.split(',');
+                        categories.forEach(cat => {
+                            const section = document.getElementById(`category-${cat.trim()}`);
+                            if (section) section.style.display = 'block';
+                        });
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide category sections
+                categorySections.forEach(section => {
+                    const itemsInSection = section.querySelectorAll('.faq-item');
+                    const visibleItems = Array.from(itemsInSection).filter(item => 
+                        item.style.display !== 'none'
+                    );
+                    
+                    if (visibleItems.length > 0) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+                
+                // Show no results message
+                if (!hasResults) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            });
+
+            // Sticky category tabs
+            window.addEventListener('scroll', function() {
+                const categories = document.querySelector('.faq-categories');
+                const hero = document.querySelector('.faq-hero');
+                
+                if (window.scrollY > hero.offsetHeight) {
+                    categories.style.position = 'fixed';
+                    categories.style.top = '0';
+                    categories.style.width = '100%';
+                } else {
+                    categories.style.position = 'sticky';
+                }
+            });
+
+            // Auto-open FAQ based on URL hash
+            const hash = window.location.hash;
+            if (hash) {
+                const targetItem = document.querySelector(hash);
+                if (targetItem && targetItem.classList.contains('faq-item')) {
+                    targetItem.classList.add('active');
+                    targetItem.scrollIntoView({ behavior: 'smooth' });
+                }
+                
+                // Also activate category tab
+                const category = hash.replace('#category-', '');
+                const correspondingTab = document.querySelector(`.category-tab[data-category="${category}"]`);
+                if (correspondingTab) {
+                    correspondingTab.click();
+                }
+            }
+
+            // Initialize animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = `${entry.target.dataset.delay || '0'}s`;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe FAQ items for animation
+            document.querySelectorAll('.faq-item').forEach((item, index) => {
+                item.dataset.delay = `${index * 0.05}s`;
+                observer.observe(item);
+            });
+        });
+
+        // Copy link to specific FAQ
+        function copyFaqLink(faqNumber) {
+            const url = `${window.location.origin}${window.location.pathname}#faq-${faqNumber}`;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Link FAQ berhasil disalin!');
+            });
+        }
+    </script>
+</body>
+</html>
