@@ -1,0 +1,1673 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portofolio - Reska Renovation & Cleaning — Solusi Profesional Renovasi & Kebersihan Properti</title>
+  <meta name="description" content="Lihat portofolio hasil pekerjaan renovasi dan cleaning kami. Bukti kualitas kerja profesional untuk properti Anda.">
+  <meta name="theme-color" content="#0f4c5c">
+  <meta name="author" content="Reska Renovation & Cleaning">
+  <meta name="keywords" content="portofolio renovasi, hasil cleaning, galeri pekerjaan, sebelum sesudah renovasi">
+  <meta property="og:title" content="Portofolio - Reska Renovation & Cleaning — Hasil Pekerjaan Kami">
+  <meta property="og:description" content="Kumpulan hasil pekerjaan renovasi dan cleaning terbaik kami">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+  <style>
+    /* ===== VARIABLES & RESET ===== */
+    :root {
+      --primary: #0f4c5c;
+      --primary-dark: #0a353f;
+      --primary-light: #1d6c7d;
+      --accent: #ff6b35;
+      --accent-light: #ff8c5a;
+      --accent-dark: #e05a2b;
+      --light: #f8f9fa;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --gray-light: #e2e8f0;
+      --gray-lighter: #f1f5f9;
+      --success: #10b981;
+      --error: #ef4444;
+      --warning: #f59e0b;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --radius: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --transition: all 0.3s ease;
+      --transition-slow: all 0.5s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: white;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    /* ===== UTILITIES ===== */
+    .text-center { text-align: center; }
+    .text-primary { color: var(--primary); }
+    .text-accent { color: var(--accent); }
+    .text-white { color: white; }
+    .text-gray { color: var(--gray); }
+    .bg-light { background-color: var(--light); }
+    .bg-gray-lighter { background-color: var(--gray-lighter); }
+    .bg-primary { background-color: var(--primary); color: white; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mt-3 { margin-top: 1.5rem; }
+    .mt-4 { margin-top: 2rem; }
+    .mt-5 { margin-top: 3rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .mb-3 { margin-bottom: 1.5rem; }
+    .mb-4 { margin-bottom: 2rem; }
+    .mb-5 { margin-bottom: 3rem; }
+    .py-1 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-2 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-3 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .py-4 { padding-top: 2rem; padding-bottom: 2rem; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-1 { gap: 0.5rem; }
+    .gap-2 { gap: 1rem; }
+    .gap-3 { gap: 1.5rem; }
+    .gap-4 { gap: 2rem; }
+    
+    /* Animation classes */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+    }
+
+    .whatsapp-button {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      animation: pulse 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      padding: 12px 0;
+      transition: var(--transition);
+      height: 70px;
+    }
+
+    header.scrolled {
+      padding: 8px 0;
+      height: 65px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .logo-text h1 {
+      font-size: 18px;
+      margin-bottom: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+
+    .logo-text p {
+      font-size: 11px;
+      color: var(--gray);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding: 8px 0;
+      color: var(--dark);
+      font-size: 15px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--primary);
+      padding: 5px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-toggle:hover {
+      background-color: var(--gray-lighter);
+    }
+
+    /* ===== PORTFOLIO HERO ===== */
+    .portfolio-hero {
+      position: relative;
+      min-height: 60vh;
+      overflow: hidden;
+      margin-top: 70px;
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+      background: linear-gradient(135deg, rgba(15, 76, 92, 0.9), rgba(29, 108, 125, 0.8));
+      color: white;
+    }
+
+    .portfolio-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .portfolio-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .portfolio-hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .portfolio-hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 800px;
+      opacity: 0.9;
+    }
+
+    /* ===== FILTER BUTTONS ===== */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 12px 30px;
+      background: white;
+      border: 2px solid var(--gray-light);
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 15px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* ===== PORTFOLIO GRID ===== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    /* ===== FOLDER CARD ===== */
+    .folder-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid var(--gray-light);
+    }
+
+    .folder-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .folder-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 25px;
+      position: relative;
+    }
+
+    .folder-header h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .folder-header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .folder-count {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      background: white;
+      color: var(--primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Folder Content - Grid of 9 Photos */
+    .folder-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 15px;
+      background: var(--light);
+    }
+
+    .folder-thumb {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .folder-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-slow);
+    }
+
+    .folder-thumb:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Folder Actions */
+    .folder-actions {
+      padding: 20px;
+      border-top: 1px solid var(--gray-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .folder-category {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .folder-category i {
+      font-size: 16px;
+    }
+
+    /* ===== MODAL FOR FULL VIEW ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 20px;
+    }
+
+    .modal-content {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      animation: modalFade 0.3s ease;
+    }
+
+    @keyframes modalFade {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h2 {
+      font-size: 28px;
+    }
+
+    .btn-close {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      transition: var(--transition);
+    }
+
+    .btn-close:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Modal Grid - All Photos */
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      padding: 25px;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .modal-photo {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .modal-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .modal-photo:hover img {
+      transform: scale(1.05);
+    }
+
+    .photo-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 15px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .modal-photo:hover .photo-info {
+      opacity: 1;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(135deg, var(--primary-dark), #082028);
+      color: white;
+      padding: 80px 0 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    .footer-logo {
+      margin-bottom: 25px;
+    }
+
+    .footer-logo .logo-icon {
+      width: 65px;
+      height: 65px;
+      margin-bottom: 20px;
+    }
+
+    .footer-description {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .footer-title {
+      font-size: 22px;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      padding-left: 8px;
+    }
+
+    .footer-links i {
+      color: var(--accent);
+      width: 20px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .copyright p {
+      margin-bottom: 10px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      
+      .portfolio-hero h1 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: flex;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 25px;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        gap: 0;
+        z-index: 999;
+        border-radius: 0 0 var(--radius) var(--radius);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+      }
+      
+      .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .nav-link {
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--gray-light);
+        font-size: 16px;
+      }
+      
+      .nav-link:last-child {
+        border-bottom: none;
+        margin-top: 15px;
+      }
+      
+      .portfolio-hero {
+        padding: 40px 0;
+      }
+      
+      .portfolio-hero h1 {
+        font-size: 32px;
+      }
+      
+      .filter-buttons {
+        gap: 10px;
+      }
+      
+      .filter-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .whatsapp-button {
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+      }
+      
+      .modal-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 15px;
+      }
+      
+      section {
+        padding: 80px 0;
+      }
+      
+      .folder-content {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .portfolio-hero h1 {
+        font-size: 28px;
+      }
+      
+      .portfolio-hero p {
+        font-size: 16px;
+      }
+      
+      .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .filter-btn {
+        width: 200px;
+      }
+      
+      .whatsapp-tooltip {
+        display: none;
+      }
+      
+      .container {
+        padding: 0 15px;
+      }
+      
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .logo-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+      }
+      
+      .logo-text h1 {
+        font-size: 16px;
+      }
+      
+      .logo-text p {
+        font-size: 10px;
+      }
+      
+      header {
+        height: 65px;
+        padding: 10px 0;
+      }
+      
+      header.scrolled {
+        height: 60px;
+        padding: 8px 0;
+      }
+      
+      .portfolio-hero {
+        margin-top: 65px;
+      }
+    }
+
+    /* Loading Animation */
+    .loading {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loading::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</head>
+<body>
+  <!-- WhatsApp Floating Button -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/6285210453311?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20tertarik%20dengan%20portofolio%20Anda" 
+       target="_blank" 
+       class="whatsapp-button"
+       aria-label="Chat via WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="whatsapp-tooltip">
+      Konsultasi Portofolio 📱
+    </div>
+  </div>
+
+  <!-- Header & Navigation (SAMA PERSIS DENGAN INDEX) -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+          <div class="logo-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div class="logo-text">
+            <h1>Reska Renovation & Cleaning</h1>
+            <p>Solusi Lengkap Perawatan Properti</p>
+          </div>
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Layanan</a>
+        <a href="gallery.html" class="nav-link" style="color: var(--accent);">Portofolio</a>
+        <a href="packages.html" class="nav-link">Paket</a>
+        <a href="index.html#testimonials" class="nav-link">Testimoni</a>
+        <a href="index.html#contact" class="nav-link">Kontak</a>
+        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-primary" style="font-size: 14px; padding: 10px 20px;">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Portfolio Hero Section -->
+  <section class="portfolio-hero">
+    <div class="container">
+      <div class="fade-in">
+        <h1>📁 Portofolio Pekerjaan Kami</h1>
+        <p>Lihat kumpulan hasil pekerjaan renovasi, cleaning, dan maintenance properti yang telah kami selesaikan dengan hasil maksimal. Setiap project dikelompokkan dalam folder untuk memudahkan navigasi.</p>
+        <div class="flex gap-3 flex-wrap">
+          <a href="#portfolio" class="btn btn-primary">
+            <i class="fas fa-images"></i> Lihat Portofolio
+          </a>
+          <a href="index.html#contact" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">
+            <i class="fas fa-calendar-alt"></i> Konsultasi Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="bg-gray-lighter">
+    <div class="container">
+      <div class="text-center mb-5 fade-in">
+        <h2 class="text-primary" style="font-size: 36px; margin-bottom: 15px;">Koleksi Project Kami</h2>
+        <p class="text-gray" style="max-width: 800px; margin: 0 auto;">Pilih kategori untuk melihat project sesuai kebutuhan Anda</p>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="filter-buttons fade-in">
+        <button class="filter-btn active" data-filter="all">Semua Project</button>
+        <button class="filter-btn" data-filter="renovasi">
+          <i class="fas fa-home"></i> Renovasi Rumah
+        </button>
+        <button class="filter-btn" data-filter="cleaning">
+          <i class="fas fa-broom"></i> General Cleaning
+        </button>
+        <button class="filter-btn" data-filter="maintenance">
+          <i class="fas fa-tools"></i> Property Maintenance
+        </button>
+      </div>
+      
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Folder cards will be loaded by JavaScript -->
+      </div>
+      
+      <!-- Empty State -->
+      <div id="emptyState" class="text-center" style="display: none;">
+        <div style="font-size: 100px; color: var(--gray-light); margin-bottom: 20px;">
+          <i class="fas fa-folder-open"></i>
+        </div>
+        <h3 class="text-gray mb-3">Belum ada project di kategori ini</h3>
+        <p class="text-gray mb-4">Silakan pilih kategori lain untuk melihat project kami</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-primary text-white">
+    <div class="container">
+      <div class="text-center fade-in">
+        <h2 style="font-size: 36px; margin-bottom: 20px;">Tertarik dengan Hasil Kerja Kami?</h2>
+        <p style="font-size: 18px; max-width: 800px; margin: 0 auto 30px; opacity: 0.9;">
+          Jadikan properti Anda berikutnya dalam portofolio kami. Hubungi kami untuk konsultasi gratis dan penawaran terbaik.
+        </p>
+        <div class="flex justify-center gap-3 flex-wrap">
+          <a href="https://wa.me/6285210453311?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20konsultasi%20project" 
+             target="_blank" class="btn" style="background: white; color: var(--primary);">
+            <i class="fab fa-whatsapp"></i> WhatsApp Sekarang
+          </a>
+          <a href="tel:085210453311" class="btn btn-outline" style="color: white; border-color: white;">
+            <i class="fas fa-phone"></i> Telepon Langsung
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (SAMA DENGAN INDEX) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+          </div>
+          <p class="footer-description">
+            Reska Renovation & Cleaning menyediakan jasa renovasi, perawatan properti, dan general cleaning profesional dengan hasil maksimal dan harga terjangkau sejak 2020.
+          </p>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="footer-title">Navigasi</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="services.html">Layanan</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="portfolio.html">Portofolio</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="packages.html">Paket</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="index.html#contact">Kontak</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="footer-title">Layanan</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">Renovasi Rumah</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">General Cleaning</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">Property Maintenance</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">Deep Cleaning</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4 class="footer-title">Kontak</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone-alt"></i> 0852-1045-3311</li>
+            <li><i class="fas fa-envelope"></i> reskajaya34@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Parung Bogor, Jawa Barat</li>
+            <li><i class="fas fa-clock"></i> Senin - Sabtu: 08:00 - 18:00</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Reska Renovation & Cleaning. Semua hak dilindungi undang-undang.</p>
+        <p>Dibuat dengan <i class="fas fa-heart text-accent"></i> untuk properti Indonesia yang lebih baik</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Full View -->
+  <div class="modal" id="photoModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Project Gallery</h2>
+        <button class="btn-close" id="closeModal">✕</button>
+      </div>
+      <div class="modal-grid" id="modalGrid">
+        <!-- Photos will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Portfolio Data - Each folder represents a project with multiple photos
+    const portfolioData = [
+      {
+        id: 1,
+        title: "Renovasi Rumah Lengkap",
+        description: "Transformasi total rumah 2 lantai di Bandung",
+        category: "renovasi",
+        date: "Januari 2024",
+        photoCount: 9,
+        photos: [
+          { 
+            url: "asset/portfolio/renovasi/pemasangangybson.jpg",
+            title: "Pemasangan Drop Ceiling",
+            description: "Kondisi pemasangan drop ceiling"
+          },
+          { 
+            url: "asset/portfolio/renovasi/finishing.jpeg",
+            title: "Proses Finishing",
+            description: "Proses  perapihan ruangan"
+          },
+          { 
+            url: "asset/portfolio/renovasi/PengecatanInterior.png",
+            title: "Pengecatan Interior",
+            description: "Proses pengecatan bagian dalam rumah"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pemasangan Lantai",
+            description: "Pemasangan keramik lantai baru"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545322696-6d5c80caa5c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Renovasi Kamar Mandi",
+            description: "Kamar mandi baru dengan desain modern"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1600577916048-804c9191e36c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Dapur Baru",
+            description: "Dapur dengan kabinet custom"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Ruang Tamu",
+            description: "Ruang tamu setelah renovasi"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kamar Tidur Utama",
+            description: "Kamar tidur utama dengan walk-in closet"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Taman Depan",
+            description: "Landscaping dan taman depan rumah"
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "Deep Cleaning Apartemen",
+        description: "Pembersihan menyeluruh apartemen 3 kamar",
+        category: "cleaning",
+        date: "Februari 2024",
+        photoCount: 9,
+        photos: [
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Sebelum Cleaning",
+            description: "Kondisi apartemen sebelum cleaning"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pembersihan Lantai",
+            description: "Proses deep cleaning lantai"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Cuci Karpet",
+            description: "Cuci karpet profesional"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pembersihan Dapur",
+            description: "Deep cleaning area dapur"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kamar Mandi",
+            description: "Sterilisasi kamar mandi"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Jendela & Kaca",
+            description: "Pembersihan jendela dan kaca"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Ruang Kerja",
+            description: "Pembersihan area kerja"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Hasil Akhir Ruang Tamu",
+            description: "Ruang tamu bersih maksimal"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Hasil Akhir Kamar",
+            description: "Kamar tidur bersih dan wangi"
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "Renovasi Kamar Mandi",
+        description: "Modernisasi 3 kamar mandi rumah lama",
+        category: "renovasi",
+        date: "Maret 2024",
+        photoCount: 8,
+        photos: [
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kondisi Awal",
+            description: "Kamar mandi sebelum renovasi"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pembongkaran",
+            description: "Proses pembongkaran lama"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pemasangan Pipa",
+            description: "Instalasi pipa baru"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pemasangan Keramik",
+            description: "Keramik dinding dan lantai"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Sanitari Baru",
+            description: "Pemasangan toilet dan wastafel"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Shower & Aksesoris",
+            description: "Pemasangan shower dan aksesoris"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kamar Mandi 1 Selesai",
+            description: "Hasil akhir kamar mandi utama"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kamar Mandi 2 Selesai",
+            description: "Hasil akhir kamar mandi tamu"
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "Post-Construction Cleaning",
+        description: "Pembersihan pasca pembangunan gedung kantor",
+        category: "cleaning",
+        date: "April 2024",
+        photoCount: 10,
+        photos: [
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kondisi Awal",
+            description: "Gedung setelah konstruksi"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Debu & Kotoran",
+            description: "Pembersihan debu konstruksi"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Lantai Marmer",
+            description: "Polishing lantai marmer"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kaca Gedung",
+            description: "Pembersihan kaca eksterior"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Area Reception",
+            description: "Pembersihan area resepsionis"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Ruang Meeting",
+            description: "Cleaning ruang rapat"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Toilet Kantor",
+            description: "Sanitasi toilet kantor"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Area Pantry",
+            description: "Pembersihan pantry"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Koridor & Hallway",
+            description: "Cleaning area koridor"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Hasil Akhir",
+            description: "Gedung siap digunakan"
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "Renovasi Dapur Modern",
+        description: "Transformasi dapur tradisional ke modern",
+        category: "renovasi",
+        date: "Mei 2024",
+        photoCount: 7,
+        photos: [
+          { 
+            url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Dapur Lama",
+            description: "Kondisi dapur sebelum renovasi"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1556909114-b2b2a3f3f5f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pembongkaran",
+            description: "Proses pembongkaran kabinet lama"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1556909115-5b4f5b5b5b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Kabinet Baru",
+            description: "Pemasangan kabinet modern"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1556909116-6b6b6b6b6b6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Countertop",
+            description: "Pemasangan granite countertop"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1556909117-7b7b7b7b7b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Backsplash",
+            description: "Pemasangan backsplash keramik"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1556909118-8b8b8b8b8b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Sink & Faucet",
+            description: "Instalasi sink dan faucet baru"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1556909119-9b9b9b9b9b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Hasil Akhir",
+            description: "Dapur modern siap digunakan"
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "Maintenance Tahunan Gedung",
+        description: "Perawatan rutin gedung perkantoran 5 lantai",
+        category: "maintenance",
+        date: "Juni 2024",
+        photoCount: 11,
+        photos: [
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pengecekan AC",
+            description: "Servis AC sentral gedung"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pengecekan Listrik",
+            description: "Maintenance panel listrik"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pipa Air",
+            description: "Pengecekan sistem plumbing"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pengecatan Ulang",
+            description: "Touch up cat dinding dan plafon"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pembersihan Atap",
+            description: "Cleaning roof dan drainage"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Floor Maintenance",
+            description: "Polishing lantai vinyl"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Pintu & Jendela",
+            description: "Servis pintu dan jendela"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Toilet Maintenance",
+            description: "Perbaikan sanitasi toilet"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Lift Service",
+            description: "Maintenance lift gedung"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Security System",
+            description: "Pengecekan sistem keamanan"
+          },
+          { 
+            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Dokumentasi Laporan",
+            description: "Laporan hasil maintenance"
+          }
+        ]
+      }
+    ];
+
+    // Initialize Portfolio
+    function initPortfolio() {
+      const grid = document.getElementById('portfolioGrid');
+      
+      portfolioData.forEach(folder => {
+        // Create folder card
+        const folderCard = document.createElement('div');
+        folderCard.className = 'folder-card fade-in';
+        folderCard.setAttribute('data-category', folder.category);
+        
+        // Get first 9 photos for thumbnail grid
+        const thumbnailPhotos = folder.photos.slice(0, 9);
+        
+        // Set category icon
+        let categoryIcon = '🏠';
+        if (folder.category === 'cleaning') categoryIcon = '🧹';
+        if (folder.category === 'maintenance') categoryIcon = '🔧';
+        
+        folderCard.innerHTML = `
+          <div class="folder-header">
+            <div class="folder-count">${folder.photoCount}</div>
+            <h3>${folder.title}</h3>
+            <p>${folder.description}</p>
+          </div>
+          <div class="folder-content">
+            ${thumbnailPhotos.map(photo => `
+              <div class="folder-thumb">
+                <img src="${photo.url}" alt="${photo.title}" loading="lazy">
+              </div>
+            `).join('')}
+          </div>
+          <div class="folder-actions">
+            <span class="folder-category">
+              ${categoryIcon} ${folder.category.charAt(0).toUpperCase() + folder.category.slice(1)} • ${folder.date}
+            </span>
+            <button class="btn btn-primary" onclick="openFolder(${folder.id})" style="padding: 8px 16px; font-size: 14px;">
+              <i class="fas fa-images"></i> Lihat ${folder.photoCount} Foto
+            </button>
+          </div>
+        `;
+        
+        grid.appendChild(folderCard);
+      });
+      
+      // Initialize animations
+      initAnimations();
+    }
+
+    // Filter Portfolio by Category
+    function filterPortfolio(category) {
+      const folders = document.querySelectorAll('.folder-card');
+      const emptyState = document.getElementById('emptyState');
+      let visibleCount = 0;
+      
+      folders.forEach(folder => {
+        if (category === 'all' || folder.getAttribute('data-category') === category) {
+          folder.style.display = 'block';
+          visibleCount++;
+        } else {
+          folder.style.display = 'none';
+        }
+      });
+      
+      // Show/hide empty state
+      if (visibleCount === 0) {
+        emptyState.style.display = 'block';
+      } else {
+        emptyState.style.display = 'none';
+      }
+    }
+
+    // Open Folder Modal
+    function openFolder(folderId) {
+      const folder = portfolioData.find(f => f.id === folderId);
+      if (!folder) return;
+      
+      const modal = document.getElementById('photoModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalGrid = document.getElementById('modalGrid');
+      
+      // Set modal title
+      modalTitle.textContent = `${folder.title} - ${folder.photoCount} Foto`;
+      
+      // Clear and populate modal grid
+      modalGrid.innerHTML = '';
+      
+      folder.photos.forEach((photo, index) => {
+        const photoElement = document.createElement('div');
+        photoElement.className = 'modal-photo';
+        photoElement.innerHTML = `
+          <img src="${photo.url}" alt="${photo.title}" loading="lazy">
+          <div class="photo-info">
+            <strong>Foto ${index + 1}: ${photo.title}</strong>
+            <p style="margin-top: 5px; font-size: 12px;">${photo.description}</p>
+          </div>
+        `;
+        modalGrid.appendChild(photoElement);
+      });
+      
+      // Show modal
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close Modal
+    function closeModal() {
+      const modal = document.getElementById('photoModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // ========== HEADER SCROLL EFFECT ==========
+    function initHeaderScroll() {
+      const header = document.getElementById('header');
+      
+      if (header) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        });
+      }
+    }
+
+    // ========== MOBILE NAVIGATION ==========
+    function initMobileNavigation() {
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navMenu = document.getElementById('navMenu');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          mobileToggle.innerHTML = navMenu.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a link
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (navMenu && !navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        });
+      }
+    }
+
+    // ========== ANIMATION ON SCROLL ==========
+    function initAnimations() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all fade-in elements
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // ========== INITIALIZATION ==========
+    function init() {
+      // Initialize portfolio
+      initPortfolio();
+      initHeaderScroll();
+      initMobileNavigation();
+      
+      // Filter buttons event listeners
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove active class from all buttons
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Filter portfolio
+          const filter = this.getAttribute('data-filter');
+          filterPortfolio(filter);
+        });
+      });
+      
+      // Modal event listeners
+      document.getElementById('closeModal').addEventListener('click', closeModal);
+      
+      // Close modal when clicking outside content
+      document.getElementById('photoModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
+    }
+
+    // ========== START APPLICATION ==========
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
