@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proses Kerja - Reska Renovation & Cleaning</title>
+    <meta name="description" content="Alur kerja profesional kami: dari konsultasi, eksekusi, hingga garansi. Transparansi total untuk hasil terbaik.">
+    
+    <!-- CSS & Resources -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <style>
+        /* Variables tambahan untuk konsistensi */
+        :root {
+            --primary-gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            --accent-gradient: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            --light-gradient: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.15);
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --transition-smooth: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Hero Section - Premium */
+        .process-hero {
+            background: linear-gradient(135deg, rgba(15, 50, 100, 0.95), rgba(10, 35, 75, 0.98)), 
+                        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .process-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .process-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .process-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            color: var(--accent-light);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+        
+        /* Timeline - Premium */
+        .process-steps {
+            padding: 120px 0;
+            background: var(--light-gradient);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
+            color: var(--primary-dark);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--gray-dark);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            line-height: 1.7;
+        }
+        
+        /* Timeline Premium */
+        .timeline-premium {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline-premium::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                var(--accent) 0%, 
+                var(--primary) 50%, 
+                var(--accent) 100%);
+            z-index: 1;
+        }
+        
+        .timeline-item-premium {
+            display: flex;
+            margin-bottom: 100px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: var(--transition-smooth);
+        }
+        
+        .timeline-item-premium.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item-premium:nth-child(odd) {
+            justify-content: flex-end;
+            padding-right: calc(50% + 50px);
+            padding-left: 0;
+        }
+        
+        .timeline-item-premium:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: calc(50% + 50px);
+            padding-right: 0;
+        }
+        
+        .timeline-marker-premium {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            z-index: 3;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-smooth);
+        }
+        
+        .timeline-marker-premium::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+        
+        .timeline-item-premium:hover .timeline-marker-premium {
+            transform: translateX(-50%) scale(1.1);
+            border-color: transparent;
+            color: white;
+        }
+        
+        .timeline-item-premium:hover .timeline-marker-premium::after {
+            opacity: 1;
+        }
+        
+        .timeline-content-premium {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        .timeline-content-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent-gradient);
+        }
+        
+        .timeline-item-premium:hover .timeline-content-premium {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .timeline-icon-premium {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .timeline-content-premium h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .timeline-content-premium p {
+            color: var(--gray-dark);
+            line-height: 1.7;
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-features-premium {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+        
+        .timeline-features-premium li {
+            padding: 0.8rem 0 0.8rem 2.5rem;
+            position: relative;
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+        
+        .timeline-features-premium li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 900;
+            font-size: 1.2rem;
+            background: rgba(40, 167, 69, 0.1);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Process Cards - Premium */
+        .process-section {
+            padding: 120px 0;
+        }
+        
+        .process-comparison-premium {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .process-card-premium {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 3.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-smooth);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .process-card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--accent-gradient);
+        }
+        
+        .process-card-premium:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .process-card-premium h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .process-card-premium h3 i {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5rem;
+        }
+        
+        .process-card-premium > p {
+            color: var(--gray-dark);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            flex-grow: 1;
+        }
+        
+        .process-highlight-premium {
+            background: linear-gradient(135deg, rgba(15, 50, 100, 0.03), rgba(15, 50, 100, 0.06));
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            margin-top: 2rem;
+            border: 1px solid rgba(15, 50, 100, 0.08);
+        }
+        
+        .highlight-grid-premium {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .highlight-item-premium {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .highlight-item-premium:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .highlight-value-premium {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+        
+        .highlight-label-premium {
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* CTA Section Premium */
+        .cta-section-premium {
+            padding: 140px 0;
+            background: linear-gradient(135deg, rgba(15, 50, 100, 0.95), rgba(10, 35, 75, 0.98)),
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 80px;
+        }
+        
+        .cta-section-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .cta-content-premium {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content-premium h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-content-premium p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+        
+        .cta-buttons-premium {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .btn-whatsapp-premium {
+            background: linear-gradient(135deg, #25D366, #1da851);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-whatsapp-premium:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-outline-premium {
+            background: transparent;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-outline-premium:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: white;
+            transform: translateY(-5px);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .trust-badge i {
+            color: var(--accent-light);
+            font-size: 1.2rem;
+        }
+        
+        /* Floating Navigation untuk timeline */
+        .timeline-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: white;
+            padding: 20px 15px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-lg);
+            display: none;
+        }
+        
+        .timeline-nav.active {
+            display: flex;
+        }
+        
+        .timeline-nav-item {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray-light);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .timeline-nav-item.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+        
+        .timeline-nav-item:hover::after {
+            content: attr(data-step);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .process-hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            
+            .cta-content-premium h2 {
+                font-size: 2.8rem;
+            }
+            
+            .timeline-premium::before {
+                left: 40px;
+            }
+            
+            .timeline-item-premium {
+                justify-content: flex-start !important;
+                padding-left: 100px !important;
+                padding-right: 20px !important;
+            }
+            
+            .timeline-marker-premium {
+                left: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .process-hero {
+                padding: 140px 0 80px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .process-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .process-card-premium,
+            .timeline-content-premium {
+                padding: 2.5rem 2rem;
+            }
+            
+            .process-comparison-premium {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline-features-premium {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlight-grid-premium {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-content-premium h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons-premium {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-whatsapp-premium,
+            .btn-outline-premium {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float animate__animated animate__pulse animate__infinite">
+        <a href="https://wa.me/6285210453311" target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header" style="background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon" style="background: var(--accent-gradient); color: white;">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1 style="color: var(--primary-dark);">Reska Renovation & Cleaning</h1>
+                        <p style="color: var(--gray-dark);">Solusi Lengkap Perawatan Properti</p>
+                    </div>
+                </a>
+                
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+        <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Layanan</a>
+        <a href="gallery.html" class="nav-link">Portofolio</a>
+        <a href="packages.html " class="nav-link">Paket</a>
+        <a href="proses-kerja.html" class="nav-link">Proses Kerja</a>
+        <a href="tentang.html" class="nav-link">Tentang Kami</a>
+        <a href="index.html#contact" class="nav-link">Kontak</a>
+        <a href="faq.html" class="nav-link">Faq page</a>
+        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="process-hero">
+        <div class="hero-content">
+            <span class="hero-badge">PROSES TERSTRUKTUR & TRANSPARAN</span>
+            <h1>Alur Kerja Profesional</h1>
+            <p>Transparansi dari konsep hingga penyelesaian. Lihat bagaimana kami mentransformasi ruang Anda dengan presisi dan keahlian kelas dunia.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-value">6</span>
+                    <span class="stat-label">Tahap Utama</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Transparansi</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Project Sukses</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Navigation -->
+    <div class="timeline-nav" id="timelineNav">
+        <div class="timeline-nav-item active" data-step="Step 1"></div>
+        <div class="timeline-nav-item" data-step="Step 2"></div>
+        <div class="timeline-nav-item" data-step="Step 3"></div>
+        <div class="timeline-nav-item" data-step="Step 4"></div>
+        <div class="timeline-nav-item" data-step="Step 5"></div>
+        <div class="timeline-nav-item" data-step="Step 6"></div>
+    </div>
+
+    <!-- ALUR UMUM -->
+    <section id="proses" class="process-steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>6 Tahap Bekerja Dengan Kami</h2>
+                <p>Proses terstruktur yang dirancang untuk memberikan hasil maksimal dengan transparansi penuh dan kualitas terjamin</p>
+            </div>
+            
+            <div class="timeline-premium">
+                <!-- Tahap 1 -->
+                <div class="timeline-item-premium" id="step1">
+                    <div class="timeline-marker-premium">01</div>
+                    <div class="timeline-content-premium">
+                        <div class="timeline-icon-premium"><i class="fas fa-comments"></i></div>
+                        <h3>Discovery & Konsultasi</h3>
+                        <p>Kami memahami visi Anda melalui konsultasi mendalam dan analisis lokasi untuk menciptakan solusi yang tepat sesuai kebutuhan dan budget.</p>
+                        <ul class="timeline-features-premium">
+                            <li>Konsultasi gratis via WhatsApp/Telepon</li>
+                            <li>Survey lokasi dan analisis kebutuhan</li>
+                            <li>Diskusi konsep dan preferensi desain</li>
+                            <li>Identifikasi kendala teknis</li>
+                            <li>Analisis budget & timeline</li>
+                            <li>Penyusunan brief proyek</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tahap 2 -->
+                <div class="timeline-item-premium" id="step2">
+                    <div class="timeline-marker-premium">02</div>
+                    <div class="timeline-content-premium">
+                        <div class="timeline-icon-premium"><i class="fas fa-file-contract"></i></div>
+                        <h3>Proposal & Penawaran</h3>
+                        <p>Kami menyusun proposal detail dengan breakdown biaya transparan dan rekomendasi material terbaik untuk proyek Anda.</p>
+                        <ul class="timeline-features-premium">
+                            <li>Rincian biaya lengkap (material + jasa)</li>
+                            <li>Presentasi pilihan material & finishing</li>
+                            <li>Detail timeline dan milestone</li>
+                            <li>Opsi pembayaran fleksibel</li>
+                            <li>3D visualization concept</li>
+                            <li>Garansi & terms condition</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tahap 3 -->
+                <div class="timeline-item-premium" id="step3">
+                    <div class="timeline-marker-premium">03</div>
+                    <div class="timeline-content-premium">
+                        <div class="timeline-icon-premium"><i class="fas fa-handshake"></i></div>
+                        <h3>Kontrak & Persiapan</h3>
+                        <p>Setelah kesepakatan, kami siapkan kontrak profesional dan persiapan eksekusi untuk memulai pekerjaan dengan lancar.</p>
+                        <ul class="timeline-features-premium">
+                            <li>Kontrak kerja dengan detail scope</li>
+                            <li>Pembayaran DP dan scheduling</li>
+                            <li>Pengadaan material sesuai spesifikasi</li>
+                            <li>Briefing tim dan safety protocol</li>
+                            <li>Persiapan site management</li>
+                            <li>Coordination meeting</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tahap 4 -->
+                <div class="timeline-item-premium" id="step4">
+                    <div class="timeline-marker-premium">04</div>
+                    <div class="timeline-content-premium">
+                        <div class="timeline-icon-premium"><i class="fas fa-hard-hat"></i></div>
+                        <h3>Eksekusi & Quality Control</h3>
+                        <p>Tim ahli kami bekerja dengan presisi sambil menjaga komunikasi terbuka dan kualitas terstandar selama proses pengerjaan.</p>
+                        <ul class="timeline-features-premium">
+                            <li>Pengerjaan sesuai timeline</li>
+                            <li>Update progress berkala via WhatsApp</li>
+                            <li>Quality control oleh supervisor</li>
+                            <li>Koordinasi rutin dengan klien</li>
+                            <li>Daily site inspection</li>
+                            <li>Progress photography</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tahap 5 -->
+                <div class="timeline-item-premium" id="step5">
+                    <div class="timeline-marker-premium">05</div>
+                    <div class="timeline-content-premium">
+                        <div class="timeline-icon-premium"><i class="fas fa-clipboard-check"></i></div>
+                        <h3>Finalisasi & Handover</h3>
+                        <p>Pengecekan akhir bersama klien, penyelesaian administratif, dan penyerahan proyek secara resmi dengan dokumentasi lengkap.</p>
+                        <ul class="timeline-features-premium">
+                            <li>Final inspection bersama klien</li>
+                            <li>Penyelesaian detail finishing</li>
+                            <li>Pembayaran pelunasan</li>
+                            <li>Penyerahan dokumen dan garansi</li>
+                            <li>Snag list completion</li>
+                            <li>Project documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tahap 6 -->
+                <div class="timeline-item-premium" id="step6">
+                    <div class="timeline-marker-premium">06</div>
+                    <div class="timeline-content-premium">
+                        <div class="timeline-icon-premium"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Aftercare & Garansi</h3>
+                        <p>Komitmen kami terus berlanjut dengan garansi pekerjaan dan dukungan purna jual untuk kepuasan dan ketenangan Anda.</p>
+                        <ul class="timeline-features-premium">
+                            <li>Garansi pekerjaan sesuai kontrak</li>
+                            <li>Konsultasi purna jual gratis</li>
+                            <li>Program maintenance rutin</li>
+                            <li>Follow-up kepuasan klien</li>
+                            <li>Emergency support 24/7</li>
+                            <li>Priority service untuk loyal customer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROSES RENOVASI -->
+    <section class="process-section" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Spesialisasi Proses Renovasi</h2>
+                <p>Pendekatan berbeda untuk berbagai skala dan kompleksitas proyek renovasi dengan standar kualitas terbaik</p>
+            </div>
+            
+            <div class="process-comparison-premium">
+                <div class="process-card-premium">
+                    <span class="card-badge">POPULAR</span>
+                    <h3><i class="fas fa-home"></i> Renovasi Ringan</h3>
+                    <p>Solusi tepat untuk renovasi terfokus seperti pengecatan, pergantian lantai, atau perbaikan area tertentu dengan minimal gangguan.</p>
+                    <ul class="timeline-features-premium">
+                        <li>Survey lokasi cepat (1-2 jam)</li>
+                        <li>Estimasi dalam 24 jam</li>
+                        <li>Minimal gangguan aktivitas</li>
+                        <li>Fokus pada detail finishing</li>
+                        <li>Clean work area protocol</li>
+                        <li>Quick turnover time</li>
+                    </ul>
+                    <div class="process-highlight-premium">
+                        <div class="highlight-grid-premium">
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">3-7 Hari</span>
+                                <span class="highlight-label-premium">Durasi Pekerjaan</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">2-3</span>
+                                <span class="highlight-label-premium">Tim Ahli</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">6 Bulan</span>
+                                <span class="highlight-label-premium">Garansi</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">Mingguan</span>
+                                <span class="highlight-label-premium">Progress Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card-premium">
+                    <span class="card-badge" style="background: var(--primary);">PREMIUM</span>
+                    <h3><i class="fas fa-building"></i> Renovasi Menyeluruh</h3>
+                    <p>Transformasi komprehensif untuk ruang seperti kamar mandi, dapur, atau renovasi struktural dengan manajemen proyek profesional.</p>
+                    <ul class="timeline-features-premium">
+                        <li>Survey dan analisis mendalam</li>
+                        <li>Rencana kerja detail 3D visualization</li>
+                        <li>Manajemen proyek profesional</li>
+                        <li>Koordinator khusus proyek</li>
+                        <li>Material procurement service</li>
+                        <li>Post-construction cleaning</li>
+                    </ul>
+                    <div class="process-highlight-premium">
+                        <div class="highlight-grid-premium">
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">2-4 Minggu</span>
+                                <span class="highlight-label-premium">Durasi Pekerjaan</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">4-6</span>
+                                <span class="highlight-label-premium">Tim Ahli</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">1-2 Tahun</span>
+                                <span class="highlight-label-premium">Garansi</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">Harian</span>
+                                <span class="highlight-label-premium">Progress Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROSES CLEANING -->
+    <section class="process-section" style="background: var(--light-gradient);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Standar Proses Cleaning</h2>
+                <p>Protokol kebersihan yang ketat untuk berbagai jenis kebutuhan pembersihan dengan bahan ramah lingkungan</p>
+            </div>
+            
+            <div class="process-comparison-premium">
+                <div class="process-card-premium">
+                    <h3><i class="fas fa-broom"></i> General Cleaning</h3>
+                    <p>Pemeliharaan rutin untuk rumah atau kantor dengan standar kebersihan tinggi dan bahan pembersih ramah lingkungan.</p>
+                    <ul class="timeline-features-premium">
+                        <li>Konsultasi cepat via WhatsApp</li>
+                        <li>Quotation dalam 2 jam</li>
+                        <li>Chemical ramah lingkungan</li>
+                        <li>Checklist area yang dibersihkan</li>
+                        <li>Equipment sterilization</li>
+                        <li>Waste management</li>
+                    </ul>
+                    <div class="process-highlight-premium">
+                        <div class="highlight-grid-premium">
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">4-8 Jam</span>
+                                <span class="highlight-label-premium">Durasi Layanan</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">2-3</span>
+                                <span class="highlight-label-premium">Tim Cleaning</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">7 Hari</span>
+                                <span class="highlight-label-premium">Garansi</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">✓</span>
+                                <span class="highlight-label-premium">Eco-Friendly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-card-premium">
+                    <h3><i class="fas fa-spray-can"></i> Deep Cleaning</h3>
+                    <p>Pembersihan intensif pasca renovasi atau untuk persiapan hunian baru dengan alat industrial grade dan disinfeksi menyeluruh.</p>
+                    <ul class="timeline-features-premium">
+                        <li>Survey khusus debu dan residu</li>
+                        <li>Protokol pembersihan bertahap</li>
+                        <li>Alat industrial grade</li>
+                        <li>Disinfeksi menyeluruh</li>
+                        <li>Air quality testing</li>
+                        <li>Post-cleaning inspection</li>
+                    </ul>
+                    <div class="process-highlight-premium">
+                        <div class="highlight-grid-premium">
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">1-3 Hari</span>
+                                <span class="highlight-label-premium">Durasi Layanan</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">3-4</span>
+                                <span class="highlight-label-premium">Tim Cleaning</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">14 Hari</span>
+                                <span class="highlight-label-premium">Garansi</span>
+                            </div>
+                            <div class="highlight-item-premium">
+                                <span class="highlight-value-premium">✓</span>
+                                <span class="highlight-label-premium">Disinfeksi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section-premium">
+        <div class="container">
+            <div class="cta-content-premium">
+                <h2>Siap Transformasi Ruang Anda?</h2>
+                <p>Kami siap membantu mewujudkan visi Anda dengan proses kerja yang transparan, profesional, dan berorientasi pada hasil. Konsultasi gratis tanpa biaya dan komitmen.</p>
+                
+                <div class="cta-buttons-premium">
+                    <a href="https://wa.me/6285210453311" target="_blank" class="btn-whatsapp-premium">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Gratis via WhatsApp
+                    </a>
+                    <a href="contact.html" class="btn-outline-premium">
+                        <i class="fas fa-calendar-alt"></i> Jadwalkan Survey Gratis
+                    </a>
+                </div>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Garansi Terjamin</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>Proses Transparan</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-users"></i>
+                        <span>Tim Berpengalaman</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span>500+ Project Sukses</span>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.7;">
+                    <i class="fas fa-phone-alt"></i> Telepon: (0852) 1045-3311 | 
+                    <i class="fas fa-envelope"></i> Email: reskajaya34@gmail.com |
+                    <i class="fas fa-map-marker-alt"></i> Area Layanan: Jabodetabek& Sekitarnya
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Footer content -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Timeline animation and navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item-premium');
+            const timelineNav = document.getElementById('timelineNav');
+            const navItems = document.querySelectorAll('.timeline-nav-item');
+            
+            // Show timeline nav when scrolled to process section
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        timelineNav.classList.add('active');
+                    } else {
+                        timelineNav.classList.remove('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '-100px 0px -100px 0px'
+            });
+            
+            observer.observe(document.querySelector('#proses'));
+            
+            // Timeline item animation
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Update navigation
+                        const stepId = entry.target.id;
+                        const stepNumber = stepId.replace('step', '') - 1;
+                        navItems.forEach(item => item.classList.remove('active'));
+                        if (navItems[stepNumber]) {
+                            navItems[stepNumber].classList.add('active');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '-50px 0px -100px 0px'
+            });
+            
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+            
+            // Navigation click
+            navItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const targetStep = document.getElementById(`step${index + 1}`);
+                    if (targetStep) {
+                        window.scrollTo({
+                            top: targetStep.offsetTop - 120,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Smooth scroll for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.process-card-premium, .timeline-content-premium');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = this.classList.contains('process-card-premium') 
+                        ? 'translateY(-15px) scale(1.02)' 
+                        : 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Add parallax effect to hero
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.process-hero');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.05}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

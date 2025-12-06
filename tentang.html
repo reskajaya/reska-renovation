@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Reska Renovation & Cleaning - Profesional Sejak 2020</title>
+    <meta name="description" content="Kenali lebih dekat Reska Renovation & Cleaning: tim profesional dengan pengalaman luas dalam renovasi, pembersihan, dan perawatan properti di Bandung dan sekitarnya.">
+    <meta name="keywords" content="tentang kami, profil perusahaan, sejarah, tim profesional, nilai perusahaan, jasa renovasi, cleaning service">
+    
+    <!-- CSS & Resources -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <style>
+        /* Improved Professional Styles */
+        .about-hero {
+            background: linear-gradient(rgba(0, 82, 182, 0.95), rgba(0, 62, 148, 0.95)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 160px 0 90px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .about-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        /* Story Section */
+        .story-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .story-content h3 {
+            color: var(--primary-dark);
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .story-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+        
+        .story-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .story-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: var(--gray-lighter);
+        }
+        
+        .team-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .team-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .team-avatar {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+            box-shadow: 0 10px 20px rgba(0, 82, 182, 0.2);
+        }
+        
+        .team-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        
+        .team-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .team-experience {
+            margin-top: 15px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+        
+        .value-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.25);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--accent-light);
+        }
+        
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .value-card p {
+            opacity: 0.85;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        /* Achievement Section */
+        .achievement-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            background: var(--gray-lighter);
+            transition: var(--transition);
+        }
+        
+        .achievement-card:hover {
+            background: white;
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+        
+        .achievement-icon {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            background: linear-gradient(rgba(0, 82, 182, 0.05), rgba(0, 82, 182, 0.05));
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .about-cta h2 {
+            color: var(--primary-dark);
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .about-cta p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 992px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .story-content {
+                order: 1;
+            }
+            
+            .story-image {
+                order: 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 140px 0 70px;
+                background-attachment: scroll;
+            }
+            
+            .about-hero h1 {
+                font-size: 36px;
+            }
+            
+            .about-hero p {
+                font-size: 18px;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .team-card, .value-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/6285210453311" target="_blank" class="whatsapp-button" aria-label="Chat via WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Reska Renovation & Cleaning</h1>
+                        <p>Solusi Lengkap Perawatan Properti</p>
+                    </div>
+                </a>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+         <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Layanan</a>
+        <a href="gallery.html" class="nav-link">Portofolio</a>
+        <a href="packages.html " class="nav-link">Paket</a>
+        <a href="proses-kerja.html" class="nav-link">Proses Kerja</a>
+        <a href="tentang.html" class="nav-link">Tentang Kami</a>
+        <a href="index.html#contact" class="nav-link">Kontak</a>
+        <a href="faq.html" class="nav-link">Faq page</a>
+        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Membangun Kepercayaan, Menciptakan Ruang Impian</h1>
+                <p>Reska Renovation & Cleaning hadir sejak 2020 sebagai mitra terpercaya dalam merawat dan meningkatkan nilai properti Anda. Dengan tim profesional dan komitmen pada kualitas, kami siap memberikan solusi terbaik untuk setiap kebutuhan properti Anda.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Proyek Selesai</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Kepuasan Klien</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Tim Profesional</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5 Tahun</span>
+                        <span class="stat-label">Pengalaman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERITA KAMI -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perjalanan & Filosofi Kami</h2>
+                <p>Ketahui bagaimana Reska Renovation & Cleaning berkembang menjadi mitra terpercaya dalam perawatan properti di Bandung dan sekitarnya.</p>
+            </div>
+            
+            <div class="story-grid">
+                <div class="story-content">
+                    <h3>Visi & Misi Perusahaan</h3>
+                    <p><strong>Visi:</strong> Menjadi penyedia jasa renovasi dan perawatan properti terdepan di Indonesia dengan standar profesional internasional.</p>
+                    <p><strong>Misi:</strong> Memberikan solusi lengkap perawatan properti dengan kualitas terbaik, harga kompetitif, dan layanan pelanggan yang memuaskan.</p>
+                    
+                    <h3 style="margin-top: 30px;">Sejarah Berdirinya</h3>
+                    <p>Berdiri pada tahun 2020, Reska Renovation & Cleaning dimulai dari sebuah tim kecil yang terdiri dari 5 orang dengan fokus pada jasa renovasi rumah. Berawal dari passion terhadap properti yang rapi dan terawat, kami melihat peluang untuk memberikan layanan yang lebih komprehensif.</p>
+                    <p>Dalam perjalanannya, kami terus berkembang dengan menambahkan layanan general cleaning, deep cleaning, dan property maintenance untuk memenuhi kebutuhan pasar yang semakin kompleks. Saat ini, kami telah dipercaya oleh ratusan klien, mulai dari rumah tangga, apartemen, hingga kantor komersial.</p>
+                    
+                    <h3 style="margin-top: 30px;">Komitmen Kami</h3>
+                    <p>Kami berkomitmen untuk selalu mengutamakan kepuasan pelanggan dengan menyediakan jasa yang berkualitas, tepat waktu, dan sesuai anggaran. Setiap proyek dikelola secara profesional dengan sistem manajemen modern dan didukung oleh tim yang berpengalaman di bidangnya masing-masing.</p>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Tim Reska sedang bekerja pada proyek renovasi" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIM KAMI -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tim Profesional Kami</h2>
+                <p>Dibackup oleh tim ahli dengan pengalaman dan sertifikasi di bidangnya masing-masing untuk memastikan hasil kerja yang optimal.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-hard-hat"></i>
+                    </div>
+                    <h3>Tim Renovasi</h3>
+                    <p>Ahli konstruksi dengan pengalaman minimal 5 tahun dalam renovasi dan pembangunan. Memiliki keahlian dalam plumbing, listrik, dan finishing interior.</p>
+                    <div class="team-experience">
+                        <i class="fas fa-award"></i> 10+ Tim | Minimal 5 Tahun Pengalaman
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-broom"></i>
+                    </div>
+                    <h3>Tim Cleaning</h3>
+                    <p>Spesialis cleaning dengan pelatihan khusus dan menggunakan peralatan modern. Terlatih dalam berbagai teknik pembersihan untuk hasil maksimal.</p>
+                    <div class="team-experience">
+                        <i class="fas fa-award"></i> 8+ Tim | Bersertifikat
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3>Tim Maintenance</h3>
+                    <p>Teknisi handal untuk perawatan properti berkala, instalasi, perbaikan darurat, dan troubleshooting berbagai masalah properti.</p>
+                    <div class="team-experience">
+                        <i class="fas fa-award"></i> 5+ Tim | Multi-Skilled
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Tim Management</h3>
+                    <p>Tim pendukung yang terdiri dari project manager, customer service, dan quality control untuk memastikan kelancaran setiap proyek.</p>
+                    <div class="team-experience">
+                        <i class="fas fa-award"></i> 3+ Tim | Profesional
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NILAI-NILAI KAMI -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Nilai-Nilai Inti Perusahaan</h2>
+                <p style="color: rgba(255,255,255,0.85)">Prinsip yang kami pegang teguh dalam setiap pekerjaan dan interaksi dengan klien</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Kualitas Premium</h3>
+                    <p>Kami tidak pernah berkompromi dengan kualitas. Setiap material dan pekerjaan melalui proses quality control yang ketat untuk memastikan hasil terbaik.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integritas & Kejujuran</h3>
+                    <p>Transparan dalam penawaran harga, laporan progress, dan evaluasi hasil. Kami percaya kepercayaan klien adalah aset terpenting.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Tepat Waktu</h3>
+                    <p>Deadline adalah komitmen. Kami menggunakan sistem manajemen proyek untuk memastikan setiap pekerjaan selesai sesuai jadwal yang disepakati.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garansi & After Sales</h3>
+                    <p>Semua pekerjaan kami bergaransi dengan layanan after sales yang responsif untuk memberikan rasa aman dan nyaman kepada klien.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Inovasi & Solusi</h3>
+                    <p>Terus mengembangkan metode kerja, teknologi, dan solusi untuk menghadapi tantangan baru dalam industri perawatan properti.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Kerja Sama Tim</h3>
+                    <p>Membangun lingkungan kerja kolaboratif dengan komunikasi yang efektif antara tim dan klien untuk hasil yang optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESTASI & PENGALAMAN -->
+    <section class="achievement-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Prestasi & Pengalaman</h2>
+                <p>Beberapa pencapaian yang telah kami raih dalam perjalanan melayani klien-klien kami</p>
+            </div>
+            
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>350+ Proyek Rumah</h3>
+                    <p>Telah menyelesaikan renovasi dan perawatan untuk ratusan properti residensial</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>100+ Kantor & Komersial</h3>
+                    <p>Pengalaman menangani properti komersial dengan berbagai kompleksitas</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>95% Klien Repeat</h3>
+                    <p>Tingkat repeat order yang tinggi menunjukkan kepuasan pelanggan</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>On-Time Delivery</h3>
+                    <p>95% proyek selesai tepat waktu sesuai kesepakatan dengan klien</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Bermitra dengan Profesional</h2>
+            <p>Percayakan properti Anda pada tim yang memahami pentingnya detail, kualitas, dan ketepatan waktu. Dengan pengalaman luas dan pendekatan profesional, kami siap mewujudkan visi Anda untuk ruang yang lebih baik.</p>
+            
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calendar-check"></i> Konsultasi Gratis
+                </a>
+                <a href="portfolio.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-images"></i> Lihat Proyek Kami
+                </a>
+                <a href="tel:085210453311" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-phone-alt"></i> Hubungi Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Reska Renovation & Cleaning menyediakan jasa renovasi, perawatan properti, dan general cleaning profesional dengan hasil maksimal dan harga terjangkau sejak 2020.
+                    </p>
+                </div>
+                
+        <div class="footer-links">
+          <h4 class="footer-title">Tautan Cepat</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-chevron-right"></i><a href="index.html">Home</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="services.html">Layanan</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="gallery.html">Portofolio</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="packages.html">Paket</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="tentang.html">Tentang Kami</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="#contact">Kontak</a></li>
+          </ul>
+        </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Layanan</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#renovasi">Renovasi Rumah</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#cleaning">General Cleaning</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#maintenance">Property Maintenance</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="services.html#deep-cleaning">Deep Cleaning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 class="footer-title">Kontak</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone-alt"></i> 0852-1045-3311</li>
+                        <li><i class="fas fa-envelope"></i> reskajaya34@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Parung Bogor, Jawa Barat</li>
+                        <li><i class="fas fa-clock"></i> Senin - Sabtu: 08:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Reska Renovation & Cleaning. Semua hak dilindungi undang-undang.</p>
+                <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b35;"></i> untuk properti Indonesia yang lebih baik</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Enhanced script for About page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to stats counter
+            const stats = document.querySelectorAll('.stat-number');
+            
+            const animateCounter = (element) => {
+                const target = parseInt(element.innerText);
+                const suffix = element.innerText.replace(/[0-9]/g, '');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.innerText = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        element.innerText = Math.floor(current) + suffix;
+                    }
+                }, 16);
+            };
+            
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('stat-number')) {
+                            animateCounter(entry.target);
+                        }
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements
+            stats.forEach(stat => observer.observe(stat));
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
