@@ -329,6 +329,14 @@
       color: var(--accent);
     }
 
+    .nav-link.active {
+      color: var(--accent);
+    }
+    
+    .nav-link.active::after {
+      width: 100%;
+    }
+
     .mobile-toggle {
       display: none;
       font-size: 22px;
@@ -509,6 +517,20 @@
       transform: scale(1.1);
     }
 
+    /* Image Error Fallback */
+    .image-fallback {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary-light), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      padding: 5px;
+    }
+
     /* Folder Actions */
     .folder-actions {
       padding: 20px;
@@ -538,7 +560,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       z-index: 1000;
       overflow-y: auto;
       padding: 20px;
@@ -551,6 +573,7 @@
       border-radius: var(--radius);
       overflow: hidden;
       animation: modalFade 0.3s ease;
+      position: relative;
     }
 
     @keyframes modalFade {
@@ -565,6 +588,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     .modal-header h2 {
@@ -581,6 +607,9 @@
       cursor: pointer;
       font-size: 20px;
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn-close:hover {
@@ -914,6 +943,17 @@
       0% { transform: translateX(-100%); }
       100% { transform: translateX(100%); }
     }
+
+    /* Error Message */
+    .error-message {
+      color: var(--error);
+      text-align: center;
+      padding: 20px;
+      background: rgba(239, 68, 68, 0.1);
+      border-radius: var(--radius-sm);
+      margin: 20px 0;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -925,12 +965,9 @@
        aria-label="Chat via WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
-    <div class="whatsapp-tooltip">
-      Konsultasi Portofolio 📱
-    </div>
   </div>
 
-  <!-- Header & Navigation (SAMA PERSIS DENGAN INDEX) -->
+  <!-- Header & Navigation -->
   <header id="header">
     <div class="container header-container">
       <div class="logo">
@@ -949,16 +986,15 @@
         <i class="fas fa-bars"></i>
       </button>
       
-       <nav class="nav-menu" id="navMenu">
+      <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Layanan</a>
-        <a href="gallery.html" class="nav-link">Portofolio</a>
-        <a href="packages.html " class="nav-link">Paket</a>
+        <a href="gallery.html" class="nav-link active">Portofolio</a>
+        <a href="packages.html" class="nav-link">Paket</a>
         <a href="proses-kerja.html" class="nav-link">Proses Kerja</a>
         <a href="tentang.html" class="nav-link">Tentang Kami</a>
-        <a href="index.html#contact" class="nav-link">Kontak</a>
-        <a href="faq.html" class="nav-link">Faq page</a>
-        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-primary" style="font-size: 14px; padding: 10px 15px;">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </nav>
@@ -975,7 +1011,7 @@
           <a href="#portfolio" class="btn btn-primary">
             <i class="fas fa-images"></i> Lihat Portofolio
           </a>
-          <a href="index.html#contact" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">
+          <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">
             <i class="fas fa-calendar-alt"></i> Konsultasi Project
           </a>
         </div>
@@ -1003,6 +1039,12 @@
         <button class="filter-btn" data-filter="maintenance">
           <i class="fas fa-tools"></i> Property Maintenance
         </button>
+      </div>
+      
+      <!-- Error Message -->
+      <div id="errorMessage" class="error-message">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Terjadi kesalahan saat memuat gambar. Pastikan koneksi internet Anda stabil.</p>
       </div>
       
       <!-- Portfolio Grid -->
@@ -1042,7 +1084,7 @@
     </div>
   </section>
 
-  <!-- Footer (SAMA DENGAN INDEX) -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -1057,7 +1099,7 @@
           </p>
         </div>
         
-         <div class="footer-links">
+        <div class="footer-links">
           <h4 class="footer-title">Tautan Cepat</h4>
           <ul class="footer-links">
             <li><i class="fas fa-chevron-right"></i><a href="index.html">Home</a></li>
@@ -1065,17 +1107,17 @@
             <li><i class="fas fa-chevron-right"></i><a href="gallery.html">Portofolio</a></li>
             <li><i class="fas fa-chevron-right"></i><a href="packages.html">Paket</a></li>
             <li><i class="fas fa-chevron-right"></i><a href="tentang.html">Tentang Kami</a></li>
-            <li><i class="fas fa-chevron-right"></i><a href="#contact">Kontak</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4 class="footer-title">Layanan</h4>
           <ul class="footer-links">
-            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">Renovasi Rumah</a></li>
-            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">General Cleaning</a></li>
-            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">Property Maintenance</a></li>
-            <li><i class="fas fa-chevron-right"></i><a href="index.html#services">Deep Cleaning</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="services.html#renovasi">Renovasi Rumah</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="services.html#cleaning">General Cleaning</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="services.html#maintenance">Property Maintenance</a></li>
+            <li><i class="fas fa-chevron-right"></i><a href="services.html#deep-cleaning">Deep Cleaning</a></li>
           </ul>
         </div>
         
@@ -1092,7 +1134,7 @@
       
       <div class="copyright">
         <p>&copy; 2025 Reska Renovation & Cleaning. Semua hak dilindungi undang-undang.</p>
-        <p>Dibuat dengan <i class="fas fa-heart text-accent"></i> untuk properti Indonesia yang lebih baik</p>
+        <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b35;"></i> untuk properti Indonesia yang lebih baik</p>
       </div>
     </div>
   </footer>
@@ -1102,7 +1144,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2 id="modalTitle">Project Gallery</h2>
-        <button class="btn-close" id="closeModal">✕</button>
+        <button class="btn-close" id="closeModal">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
       <div class="modal-grid" id="modalGrid">
         <!-- Photos will be loaded here -->
@@ -1111,75 +1155,55 @@
   </div>
 
   <script>
-    // Portfolio Data - Each folder represents a project with multiple photos
+    // Portfolio Data - SEMUA PATH DIPERBAIKI
     const portfolioData = [
       {
         id: 1,
         title: "Renovasi Rumah Lengkap",
-        description: "Transformasi total rumah 2 lantai di Bandung",
+        description: "Transformasi total rumah 2 lantai di Bogor",
         category: "renovasi",
         date: "Januari 2024",
-        photoCount: 9,
+        photoCount: 5,
         photos: [
           { 
-            url: "pemasangangybson.jpg",
+            url: "pemasangangybson.jpg", // PATH DIPERBAIKI
             title: "Pemasangan Drop Ceiling",
-            description: "Kondisi pemasangan drop ceiling"
+            description: "Proses pemasangan drop ceiling gypsum"
           },
           { 
-            url: "asset/portfolio/renovasi/finishing.jpeg",
+            url: "finishing.jpeg", // PATH DIPERBAIKI
             title: "Proses Finishing",
-            description: "Proses  perapihan ruangan"
+            description: "Pekerjaan finishing interior"
           },
           { 
-            url: "asset/portfolio/renovasi/PengecatanInterior.png",
+            url: "PengecatanInterior.png", // PATH DIPERBAIKI
             title: "Pengecatan Interior",
-            description: "Proses pengecatan bagian interior dalam rumah"
+            description: "Pengecatan dinding dan plafon"
           },
           { 
-            url: "asset/portfolio/renovasi/pemasangan-keramik.jpeg",
+            url: "pemasangan-keramik.jpeg", // PATH DIPERBAIKI
             title: "Pemasangan Lantai",
-            description: "Pemasangan keramik lantai baru"
+            description: "Instalasi keramik lantai baru"
           },
           { 
-            <img src="kamar-mandi.png" alt="Renovasi Kamar Mandi">
+            url: "kamar-mandi.png", // PATH DIPERBAIKI
             title: "Renovasi Kamar Mandi",
             description: "Kamar mandi baru dengan desain modern"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1600577916048-804c9191e36c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Dapur Baru",
-            description: "Dapur dengan kabinet custom"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Ruang Tamu",
-            description: "Ruang tamu setelah renovasi"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kamar Tidur Utama",
-            description: "Kamar tidur utama dengan walk-in closet"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Taman Depan",
-            description: "Landscaping dan taman depan rumah"
           }
         ]
       },
       {
         id: 2,
-        title: "Deep Cleaning Apartemen",
-        description: "Pembersihan menyeluruh apartemen 3 kamar",
+        title: "Pembersihan Properti",
+        description: "Deep cleaning rumah setelah renovasi",
         category: "cleaning",
         date: "Februari 2024",
-        photoCount: 9,
+        photoCount: 6,
         photos: [
           { 
             url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
             title: "Sebelum Cleaning",
-            description: "Kondisi apartemen sebelum cleaning"
+            description: "Kondisi properti sebelum dibersihkan"
           },
           { 
             url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -1188,306 +1212,262 @@
           },
           { 
             url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Cuci Karpet",
-            description: "Cuci karpet profesional"
+            title: "Cuci Jendela",
+            description: "Pembersihan kaca dan jendela"
           },
           { 
             url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pembersihan Dapur",
-            description: "Deep cleaning area dapur"
+            title: "Dapur Setelah Cleaning",
+            description: "Area dapur yang sudah bersih"
           },
           { 
             url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kamar Mandi",
-            description: "Sterilisasi kamar mandi"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Jendela & Kaca",
-            description: "Pembersihan jendela dan kaca"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Ruang Kerja",
-            description: "Pembersihan area kerja"
+            title: "Kamar Mandi Bersih",
+            description: "Kamar mandi setelah disterilkan"
           },
           { 
             url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Hasil Akhir Ruang Tamu",
-            description: "Ruang tamu bersih maksimal"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Hasil Akhir Kamar",
-            description: "Kamar tidur bersih dan wangi"
+            title: "Hasil Akhir",
+            description: "Properti bersih maksimal"
           }
         ]
       },
       {
         id: 3,
         title: "Renovasi Kamar Mandi",
-        description: "Modernisasi 3 kamar mandi rumah lama",
+        description: "Modernisasi kamar mandi utama",
         category: "renovasi",
         date: "Maret 2024",
-        photoCount: 8,
+        photoCount: 4,
         photos: [
           { 
-            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kondisi Awal",
-            description: "Kamar mandi sebelum renovasi"
+            url: "kamar-mandi.png", // Gunakan gambar Anda sendiri
+            title: "Hasil Renovasi",
+            description: "Kamar mandi setelah renovasi"
           },
           { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pembongkaran",
-            description: "Proses pembongkaran lama"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pemasangan Pipa",
-            description: "Instalasi pipa baru"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "pemasangan-keramik.jpeg", // Gunakan gambar Anda sendiri
             title: "Pemasangan Keramik",
-            description: "Keramik dinding dan lantai"
+            description: "Proses instalasi keramik dinding"
           },
           { 
-            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Sanitari Baru",
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Instalasi Sanitari",
             description: "Pemasangan toilet dan wastafel"
           },
           { 
-            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Shower & Aksesoris",
-            description: "Pemasangan shower dan aksesoris"
-          },
-          { 
             url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kamar Mandi 1 Selesai",
-            description: "Hasil akhir kamar mandi utama"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kamar Mandi 2 Selesai",
-            description: "Hasil akhir kamar mandi tamu"
+            title: "Finishing Aksesoris",
+            description: "Pemasangan aksesoris kamar mandi"
           }
         ]
       },
       {
         id: 4,
-        title: "Post-Construction Cleaning",
-        description: "Pembersihan pasca pembangunan gedung kantor",
-        category: "cleaning",
+        title: "Maintenance Rutin",
+        description: "Perawatan properti bulanan",
+        category: "maintenance",
         date: "April 2024",
-        photoCount: 10,
+        photoCount: 5,
         photos: [
           { 
             url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kondisi Awal",
-            description: "Gedung setelah konstruksi"
+            title: "Pengecekan Instalasi",
+            description: "Inspeksi sistem listrik dan plumbing"
           },
           { 
             url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Debu & Kotoran",
-            description: "Pembersihan debu konstruksi"
+            title: "Perbaikan Minor",
+            description: "Perbaikan kerusakan kecil"
           },
           { 
             url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Lantai Marmer",
-            description: "Polishing lantai marmer"
+            title: "Cat Ulang",
+            description: "Touch up cat dinding"
           },
           { 
             url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kaca Gedung",
-            description: "Pembersihan kaca eksterior"
+            title: "Pembersihan AC",
+            description: "Servis dan cleaning AC"
           },
           { 
             url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Area Reception",
-            description: "Pembersihan area resepsionis"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Ruang Meeting",
-            description: "Cleaning ruang rapat"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Toilet Kantor",
-            description: "Sanitasi toilet kantor"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Area Pantry",
-            description: "Pembersihan pantry"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Koridor & Hallway",
-            description: "Cleaning area koridor"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Hasil Akhir",
-            description: "Gedung siap digunakan"
+            title: "Dokumentasi Laporan",
+            description: "Laporan hasil maintenance"
           }
         ]
       },
       {
         id: 5,
-        title: "Renovasi Dapur Modern",
-        description: "Transformasi dapur tradisional ke modern",
+        title: "Renovasi Interior",
+        description: "Pembenahan interior rumah",
         category: "renovasi",
         date: "Mei 2024",
-        photoCount: 7,
+        photoCount: 4,
         photos: [
           { 
-            url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Dapur Lama",
-            description: "Kondisi dapur sebelum renovasi"
+            url: "PengecatanInterior.png", // Gunakan gambar Anda sendiri
+            title: "Pengecatan Interior",
+            description: "Proses pengecatan dinding"
           },
           { 
-            url: "https://images.unsplash.com/photo-1556909114-b2b2a3f3f5f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pembongkaran",
-            description: "Proses pembongkaran kabinet lama"
+            url: "pemasangangybson.jpg", // Gunakan gambar Anda sendiri
+            title: "Pemasangan Plafon",
+            description: "Instalasi plafon gypsum"
           },
           { 
-            url: "https://images.unsplash.com/photo-1556909115-5b4f5b5b5b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Kabinet Baru",
-            description: "Pemasangan kabinet modern"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1556909116-6b6b6b6b6b6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Countertop",
-            description: "Pemasangan granite countertop"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1556909117-7b7b7b7b7b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Backsplash",
-            description: "Pemasangan backsplash keramik"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1556909118-8b8b8b8b8b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Sink & Faucet",
-            description: "Instalasi sink dan faucet baru"
+            url: "finishing.jpeg", // Gunakan gambar Anda sendiri
+            title: "Finishing Detail",
+            description: "Detail pekerjaan finishing"
           },
           { 
             url: "https://images.unsplash.com/photo-1556909119-9b9b9b9b9b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Hasil Akhir",
-            description: "Dapur modern siap digunakan"
+            title: "Hasil Akhir Interior",
+            description: "Interior baru yang modern"
           }
         ]
       },
       {
         id: 6,
-        title: "Maintenance Tahunan Gedung",
-        description: "Perawatan rutin gedung perkantoran 5 lantai",
-        category: "maintenance",
+        title: "Cleaning Pasca Renovasi",
+        description: "Pembersihan menyeluruh setelah renovasi",
+        category: "cleaning",
         date: "Juni 2024",
-        photoCount: 11,
+        photoCount: 5,
         photos: [
           { 
+            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            title: "Debu Konstruksi",
+            description: "Pembersihan debu pasca renovasi"
+          },
+          { 
             url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pengecekan AC",
-            description: "Servis AC sentral gedung"
+            title: "Pembersihan Kaca",
+            description: "Cleaning jendela dan kaca"
           },
           { 
             url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pengecekan Listrik",
-            description: "Maintenance panel listrik"
+            title: "Lantai Bersih",
+            description: "Lantai setelah dipoles"
           },
           { 
             url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pipa Air",
-            description: "Pengecekan sistem plumbing"
+            title: "Sanitasi",
+            description: "Sterilisasi kamar mandi dan dapur"
           },
           { 
             url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pengecatan Ulang",
-            description: "Touch up cat dinding dan plafon"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pembersihan Atap",
-            description: "Cleaning roof dan drainage"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Floor Maintenance",
-            description: "Polishing lantai vinyl"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Pintu & Jendela",
-            description: "Servis pintu dan jendela"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Toilet Maintenance",
-            description: "Perbaikan sanitasi toilet"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Lift Service",
-            description: "Maintenance lift gedung"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Security System",
-            description: "Pengecekan sistem keamanan"
-          },
-          { 
-            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-            title: "Dokumentasi Laporan",
-            description: "Laporan hasil maintenance"
+            title: "Properti Siap Huni",
+            description: "Rumah bersih dan siap ditempati"
           }
         ]
       }
     ];
 
+    // Function to handle image loading errors
+    function handleImageError(imgElement, fallbackText = 'Foto tidak tersedia') {
+      const parent = imgElement.parentElement;
+      if (parent && !parent.classList.contains('image-fallback')) {
+        const fallbackDiv = document.createElement('div');
+        fallbackDiv.className = 'image-fallback';
+        fallbackDiv.innerHTML = `<span>${fallbackText}</span>`;
+        
+        // Replace the image with fallback
+        parent.innerHTML = '';
+        parent.appendChild(fallbackDiv);
+        
+        // Log error for debugging
+        console.warn(`Gambar gagal dimuat: ${imgElement.src}`);
+      }
+    }
+
+    // Function to create folder card
+    function createFolderCard(folder) {
+      const folderCard = document.createElement('div');
+      folderCard.className = 'folder-card fade-in';
+      folderCard.setAttribute('data-category', folder.category);
+      
+      // Get first 9 photos for thumbnail grid
+      const thumbnailPhotos = folder.photos.slice(0, 9);
+      
+      // Set category icon
+      let categoryIcon = '🏠';
+      if (folder.category === 'cleaning') categoryIcon = '🧹';
+      if (folder.category === 'maintenance') categoryIcon = '🔧';
+      
+      // Create folder content
+      const folderContent = document.createElement('div');
+      folderContent.className = 'folder-content';
+      
+      // Add thumbnails
+      thumbnailPhotos.forEach(photo => {
+        const thumbDiv = document.createElement('div');
+        thumbDiv.className = 'folder-thumb';
+        
+        const img = document.createElement('img');
+        img.src = photo.url;
+        img.alt = photo.title;
+        img.loading = 'lazy';
+        
+        // Add error handler
+        img.onerror = () => handleImageError(img, photo.title);
+        
+        thumbDiv.appendChild(img);
+        folderContent.appendChild(thumbDiv);
+      });
+      
+      folderCard.innerHTML = `
+        <div class="folder-header">
+          <div class="folder-count">${folder.photoCount}</div>
+          <h3>${folder.title}</h3>
+          <p>${folder.description}</p>
+        </div>
+      `;
+      
+      folderCard.appendChild(folderContent);
+      
+      // Add folder actions
+      const folderActions = document.createElement('div');
+      folderActions.className = 'folder-actions';
+      folderActions.innerHTML = `
+        <span class="folder-category">
+          ${categoryIcon} ${folder.category.charAt(0).toUpperCase() + folder.category.slice(1)} • ${folder.date}
+        </span>
+        <button class="btn btn-primary" onclick="openFolder(${folder.id})" style="padding: 8px 16px; font-size: 14px;">
+          <i class="fas fa-images"></i> Lihat ${folder.photoCount} Foto
+        </button>
+      `;
+      
+      folderCard.appendChild(folderActions);
+      return folderCard;
+    }
+
     // Initialize Portfolio
     function initPortfolio() {
       const grid = document.getElementById('portfolioGrid');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Clear existing content
+      grid.innerHTML = '';
+      
+      let hasError = false;
       
       portfolioData.forEach(folder => {
-        // Create folder card
-        const folderCard = document.createElement('div');
-        folderCard.className = 'folder-card fade-in';
-        folderCard.setAttribute('data-category', folder.category);
-        
-        // Get first 9 photos for thumbnail grid
-        const thumbnailPhotos = folder.photos.slice(0, 9);
-        
-        // Set category icon
-        let categoryIcon = '🏠';
-        if (folder.category === 'cleaning') categoryIcon = '🧹';
-        if (folder.category === 'maintenance') categoryIcon = '🔧';
-        
-        folderCard.innerHTML = `
-          <div class="folder-header">
-            <div class="folder-count">${folder.photoCount}</div>
-            <h3>${folder.title}</h3>
-            <p>${folder.description}</p>
-          </div>
-          <div class="folder-content">
-            ${thumbnailPhotos.map(photo => `
-              <div class="folder-thumb">
-                <img src="${photo.url}" alt="${photo.title}" loading="lazy">
-              </div>
-            `).join('')}
-          </div>
-          <div class="folder-actions">
-            <span class="folder-category">
-              ${categoryIcon} ${folder.category.charAt(0).toUpperCase() + folder.category.slice(1)} • ${folder.date}
-            </span>
-            <button class="btn btn-primary" onclick="openFolder(${folder.id})" style="padding: 8px 16px; font-size: 14px;">
-              <i class="fas fa-images"></i> Lihat ${folder.photoCount} Foto
-            </button>
-          </div>
-        `;
-        
-        grid.appendChild(folderCard);
+        try {
+          const folderCard = createFolderCard(folder);
+          grid.appendChild(folderCard);
+        } catch (error) {
+          console.error('Error creating folder card:', error);
+          hasError = true;
+        }
       });
+      
+      // Show error message if any
+      if (hasError) {
+        errorMessage.style.display = 'block';
+      } else {
+        errorMessage.style.display = 'none';
+      }
       
       // Initialize animations
       initAnimations();
@@ -1534,13 +1514,26 @@
       folder.photos.forEach((photo, index) => {
         const photoElement = document.createElement('div');
         photoElement.className = 'modal-photo';
-        photoElement.innerHTML = `
-          <img src="${photo.url}" alt="${photo.title}" loading="lazy">
-          <div class="photo-info">
-            <strong>Foto ${index + 1}: ${photo.title}</strong>
-            <p style="margin-top: 5px; font-size: 12px;">${photo.description}</p>
-          </div>
+        
+        const img = document.createElement('img');
+        img.src = photo.url;
+        img.alt = photo.title;
+        img.loading = 'lazy';
+        
+        // Add error handler for modal images
+        img.onerror = function() {
+          this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBmNGM1YyIvPjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5HQU1CQVIgVElEQUsgVkVSU0VESUE8L3RleHQ+PHRleHQgeD0iMjAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPiR7cGhvdG8udGl0bGV9PC90ZXh0Pjwvc3ZnPg==';
+        };
+        
+        const photoInfo = document.createElement('div');
+        photoInfo.className = 'photo-info';
+        photoInfo.innerHTML = `
+          <strong>Foto ${index + 1}: ${photo.title}</strong>
+          <p style="margin-top: 5px; font-size: 12px;">${photo.description}</p>
         `;
+        
+        photoElement.appendChild(img);
+        photoElement.appendChild(photoInfo);
         modalGrid.appendChild(photoElement);
       });
       
@@ -1674,5 +1667,3 @@
   </script>
 </body>
 </html>
-
-
