@@ -296,6 +296,35 @@
       line-height: 1.2;
     }
 
+    /* Mobile Toggle - PERBAIKAN */
+    .mobile-toggle {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--primary);
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      position: relative;
+    }
+
+    .mobile-toggle:hover {
+      background-color: var(--gray-lighter);
+    }
+
+    .mobile-toggle.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Navigation Menu */
     .nav-menu {
       display: flex;
       align-items: center;
@@ -335,26 +364,6 @@
     
     .nav-link.active::after {
       width: 100%;
-    }
-
-    .mobile-toggle {
-      display: none;
-      font-size: 22px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: var(--primary);
-      padding: 5px;
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-      width: 40px;
-      height: 40px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mobile-toggle:hover {
-      background-color: var(--gray-lighter);
     }
 
     /* ===== PORTFOLIO HERO ===== */
@@ -783,17 +792,18 @@
         width: 100%;
         background-color: white;
         flex-direction: column;
-        padding: 25px;
+        padding: 20px 25px;
         box-shadow: var(--shadow-lg);
-        transform: translateY(-100%);
+        transform: translateY(-150%);
         opacity: 0;
         visibility: hidden;
-        transition: var(--transition);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 0;
         z-index: 999;
         border-radius: 0 0 var(--radius) var(--radius);
         max-height: calc(100vh - 70px);
         overflow-y: auto;
+        height: auto;
       }
       
       .nav-menu.active {
@@ -804,15 +814,75 @@
       
       .nav-link {
         width: 100%;
-        padding: 15px 0;
+        padding: 16px 0;
         border-bottom: 1px solid var(--gray-light);
         font-size: 16px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
       
       .nav-link:last-child {
         border-bottom: none;
-        margin-top: 15px;
+        margin-top: 10px;
       }
+      
+      /* WhatsApp button di mobile */
+      .nav-menu .btn-whatsapp {
+        margin-top: 10px;
+        padding: 12px 20px;
+        width: 100%;
+        justify-content: center;
+        font-size: 15px;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color: white;
+        border: none;
+      }
+      
+      .nav-menu .btn-whatsapp i {
+        margin-right: 8px;
+      }
+      
+      header.scrolled .nav-menu {
+        top: 65px;
+      }
+      
+      /* Icon untuk menu mobile */
+      .mobile-icon {
+        width: 24px;
+        text-align: center;
+        margin-right: 12px;
+        font-size: 18px;
+        color: var(--primary);
+      }
+      
+      /* Animasi untuk menu item */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      .nav-menu.active .nav-link {
+        animation: slideIn 0.3s ease-out forwards;
+        animation-delay: calc(var(--i, 0) * 0.05s);
+      }
+      
+      .nav-menu .nav-link:nth-child(1) { --i: 1; }
+      .nav-menu .nav-link:nth-child(2) { --i: 2; }
+      .nav-menu .nav-link:nth-child(3) { --i: 3; }
+      .nav-menu .nav-link:nth-child(4) { --i: 4; }
+      .nav-menu .nav-link:nth-child(5) { --i: 5; }
+      .nav-menu .nav-link:nth-child(6) { --i: 6; }
+      .nav-menu .nav-link:nth-child(7) { --i: 7; }
+      .nav-menu .nav-link:nth-child(8) { --i: 8; }
+      .nav-menu .nav-link:nth-child(9) { --i: 9; }
       
       .portfolio-hero {
         padding: 40px 0;
@@ -920,6 +990,26 @@
       .portfolio-hero {
         margin-top: 65px;
       }
+      
+      .nav-menu {
+        top: 65px;
+        padding: 15px 20px;
+      }
+      
+      .nav-link {
+        padding: 14px 0;
+        font-size: 15px;
+      }
+      
+      header.scrolled .nav-menu {
+        top: 60px;
+      }
+      
+      .mobile-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
     }
 
     /* Loading Animation */
@@ -982,11 +1072,14 @@
         </a>
       </div>
       
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+      <!-- PERBAIKAN: Tombol toggle dengan atribut aksesibilitas -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" 
+              aria-expanded="false" aria-controls="navMenu" role="button">
         <i class="fas fa-bars"></i>
       </button>
       
-     <nav class="nav-menu" id="navMenu">
+      <!-- PERBAIKAN: Menu navigasi -->
+      <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Layanan</a>
         <a href="gallery.html" class="nav-link">Portofolio</a>
@@ -1247,22 +1340,22 @@
         photoCount: 4,
         photos: [
           { 
-            url: "kamar-mandi.png", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/8gBRrF6w/kamarmandi.png", // Gunakan gambar Anda sendiri
             title: "Hasil Renovasi",
             description: "Kamar mandi setelah renovasi"
           },
           { 
-            url: "pemasangan-keramik.jpeg", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/Ps1XnLhR/pemsangan-keramik.png", // Gunakan gambar Anda sendiri
             title: "Pemasangan Keramik",
             description: "Proses instalasi keramik dinding"
           },
           { 
-            url: "https://i.ibb.co.com/Lh8zx8K4/westafel-kamarmandi.png",
+            url: "https://i.ibb.co.com/j9ZXWQdt/instalasi-kamarmandi.png",
             title: "Instalasi Sanitari",
             description: "Pemasangan toilet dan wastafel"
           },
           { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/7tKptjhN/acesoris-kamrmandi.png",
             title: "Finishing Aksesoris",
             description: "Pemasangan aksesoris kamar mandi"
           }
@@ -1277,22 +1370,22 @@
         photoCount: 5,
         photos: [
           { 
-            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/dqkNzND/pengecekan.png",
             title: "Pengecekan Instalasi",
             description: "Inspeksi sistem listrik dan plumbing"
           },
           { 
-            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/Q3tHg77b/perbaikan.png",
             title: "Perbaikan Minor",
             description: "Perbaikan kerusakan kecil"
           },
           { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/b5MF20yZ/penegecatan.png",
             title: "Cat Ulang",
             description: "Touch up cat dinding"
           },
           { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/pBnxHdFd/service-ac.png",
             title: "Pembersihan AC",
             description: "Servis dan cleaning AC"
           },
@@ -1312,22 +1405,22 @@
         photoCount: 4,
         photos: [
           { 
-            url: "PengecatanInterior.png", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/bg0CV6LJ/Pengecatan-Interior.png", // Gunakan gambar Anda sendiri
             title: "Pengecatan Interior",
             description: "Proses pengecatan dinding"
           },
           { 
-            url: "pemasangangybson.jpg", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/pvz745Qx/dropceiling.png", // Gunakan gambar Anda sendiri
             title: "Pemasangan Plafon",
             description: "Instalasi plafon gypsum"
           },
           { 
-            url: "finishing.jpeg", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/RmkcCPX/finishing.jpg", // Gunakan gambar Anda sendiri
             title: "Finishing Detail",
             description: "Detail pekerjaan finishing"
           },
           { 
-            url: "https://images.unsplash.com/photo-1556909119-9b9b9b9b9b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/QjXxRQ28/drop-ceiling.png",
             title: "Hasil Akhir Interior",
             description: "Interior baru yang modern"
           }
@@ -1342,27 +1435,27 @@
         photoCount: 5,
         photos: [
           { 
-            url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/dJttbNVQ/debukontruksi.png",
             title: "Debu Konstruksi",
             description: "Pembersihan debu pasca renovasi"
           },
           { 
-            url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/twm62LsM/Post-Renovation-Cleaning.png",
             title: "Pembersihan Kaca",
             description: "Cleaning jendela dan kaca"
           },
           { 
-            url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/ch7HmJRK/lanatirapih.png",
             title: "Lantai Bersih",
             description: "Lantai setelah dipoles"
           },
           { 
-            url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/d0T56b97/persihandapur.png",
             title: "Sanitasi",
             description: "Sterilisasi kamar mandi dan dapur"
           },
           { 
-            url: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            url: "https://i.ibb.co.com/B2WwX3t3/full-siaphuni.png",
             title: "Properti Siap Huni",
             description: "Rumah bersih dan siap ditempati"
           }
@@ -1570,33 +1663,101 @@
       }
     }
 
-    // ========== MOBILE NAVIGATION ==========
+    // ========== MOBILE NAVIGATION - PERBAIKAN ==========
     function initMobileNavigation() {
       const mobileToggle = document.getElementById('mobileToggle');
       const navMenu = document.getElementById('navMenu');
       const navLinks = document.querySelectorAll('.nav-link');
+      const body = document.body;
       
       if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-          navMenu.classList.toggle('active');
-          mobileToggle.innerHTML = navMenu.classList.contains('active') 
+        // Toggle menu dengan efek smooth
+        mobileToggle.addEventListener('click', (e) => {
+          e.stopPropagation(); // Mencegah bubbling
+          
+          const isActive = navMenu.classList.toggle('active');
+          mobileToggle.classList.toggle('active');
+          mobileToggle.innerHTML = isActive 
             ? '<i class="fas fa-times"></i>' 
             : '<i class="fas fa-bars"></i>';
+          
+          // Update ARIA attribute
+          mobileToggle.setAttribute('aria-expanded', isActive);
+          
+          // Mencegah scroll body saat menu terbuka
+          if (isActive) {
+            body.style.overflow = 'hidden';
+          } else {
+            body.style.overflow = '';
+          }
         });
         
-        // Close menu when clicking a link
+        // Close menu when clicking a link - dengan animasi lebih cepat
         navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+          link.addEventListener('click', (e) => {
+            // Jika link adalah anchor ke section di halaman yang sama
+            if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+              e.preventDefault();
+              const targetId = link.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
+              
+              // Tutup menu terlebih dahulu
+              navMenu.classList.remove('active');
+              mobileToggle.classList.remove('active');
+              mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+              mobileToggle.setAttribute('aria-expanded', 'false');
+              body.style.overflow = '';
+              
+              // Scroll ke target dengan delay kecil
+              setTimeout(() => {
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }, 300);
+            } else {
+              // Untuk link ke halaman lain, tutup menu saja
+              navMenu.classList.remove('active');
+              mobileToggle.classList.remove('active');
+              mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+              mobileToggle.setAttribute('aria-expanded', 'false');
+              body.style.overflow = '';
+            }
           });
         });
         
-        // Close menu when clicking outside
+        // Close menu when clicking outside - RESPONSIF
         document.addEventListener('click', (e) => {
-          if (navMenu && !navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('active')) {
+          // Jika klik di luar menu dan tombol toggle
+          if (navMenu.classList.contains('active') && 
+              !navMenu.contains(e.target) && 
+              !mobileToggle.contains(e.target)) {
             navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
             mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
+          }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
+          }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
           }
         });
       }
