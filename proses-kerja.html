@@ -241,7 +241,47 @@
             color: var(--gray);
             font-weight: 500;
         }
-        
+        /* ===== LOGO UPDATE ===== */
+.logo-image {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-image img {
+  height: 50px; /* Sesuaikan tinggi logo */
+  width: auto;
+  max-height: 100%;
+}
+
+.full-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Remove icon if using image logo */
+.logo-icon {
+  display: none;
+}
+
+/* Adjust text for logo-only design */
+.logo-text h1 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.logo-text p {
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 500;
+  line-height: 1.2;
+}
         .mobile-toggle {
             display: none;
             width: 44px;
@@ -1236,7 +1276,7 @@
 <body>
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/6285210453311?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20ingin%20tanya%20tentang%20proses%20kerja%20Anda" 
+        <a href="https://wa.me/6287831750310?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20ingin%20tanya%20tentang%20proses%20kerja%20Anda" 
            target="_blank" 
            class="whatsapp-button"
            aria-label="Chat via WhatsApp">
@@ -1249,12 +1289,14 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
+                    <div class="logo">
+                <div class="logo-image">
+                <img src="asset/logo-rimagraha.jpg" alt="Rima Graha 16" class="full-logo">
+            </div>
+                </div>
                     <div class="logo-text">
-                        <h1>Reska Renovation & Cleaning</h1>
-                        <p>Solusi Lengkap Perawatan Properti</p>
+                        <h1>Rima Graha 16</h1>
+                        <p>Design Contraktor & Maintenance Properti</p>
                     </div>
                 </a>
                 
@@ -1265,13 +1307,13 @@
         <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Layanan</a>
-        <a href="gallery.html" class="nav-link">Portofolio</a>
+        <a href="portofolio.html" class="nav-link">Portofolio</a>
         <a href="packages.html " class="nav-link">Paket</a>
         <a href="proses-kerja.html" class="nav-link">Proses Kerja</a>
         <a href="tentang.html" class="nav-link">Tentang Kami</a>
         <a href="#contact" class="nav-link">Kontak</a>
         <a href="faq.html" class="nav-link">Faq page</a>
-        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
+        <a href="https://wa.me/6287831750310" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </nav>
@@ -1665,7 +1707,7 @@
                 <p>Kami siap membantu mewujudkan visi Anda dengan proses kerja yang transparan, profesional, dan berorientasi pada hasil. Konsultasi gratis tanpa biaya dan komitmen.</p>
                 
                 <div class="cta-buttons">
-                    <a href="https://wa.me/6285210453311?text=Halo%20Reska,%20saya%20ingin%20konsultasi%20tentang%20proses%20kerja%20Anda" 
+                    <a href="https://wa.me/6287831750310?text=Halo%20Reska,%20saya%20ingin%20konsultasi%20tentang%20proses%20kerja%20Anda" 
                        target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Konsultasi Gratis
                     </a>
@@ -1696,6 +1738,7 @@
                 <div class="contact-info">
                     <p>
                         <i class="fas fa-phone-alt"></i> Telepon: (0852) 1045-3311 | 
+                        i class="fas fa-phone-alt"></i> Telepon: (0878) 3175-0310 |
                         <i class="fas fa-envelope"></i> Email: reskajaya34@gmail.com |
                         <i class="fas fa-map-marker-alt"></i> Area Layanan: Jabodetabek & Sekitarnya
                     </p>
@@ -1710,9 +1753,11 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
+                        <div class="logo">
+  <div class="logo-image">
+    <img src="asset/logo-rimagraha.jpg" alt="Rima Graha 16" class="full-logo">
+  </div>
+</div>
                     </div>
                     <p class="footer-description">
                         Reska Renovation & Cleaning menyediakan jasa renovasi, perawatan properti, dan general cleaning profesional dengan hasil maksimal dan harga terjangkau sejak 2020.
@@ -1724,7 +1769,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-chevron-right"></i><a href="index.html">Home</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="services.html">Layanan</a></li>
-                        <li><i class="fas fa-chevron-right"></i><a href="gallery.html">Portofolio</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="portofolio.html">Portofolio</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="packages.html">Paket</a></li>
                         <li><i class="fas fa-chevron-right"></i><a href="proses-kerja.html">Proses Kerja</a></li>
                     </ul>
@@ -1745,6 +1790,7 @@
                     <h4 class="footer-title">Kontak</h4>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone-alt"></i> 0852-1045-3311</li>
+                        <li><i class="fas fa-phone-alt"></i> 0878-3175-0310</li>
                         <li><i class="fas fa-envelope"></i> reskajaya34@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Parung Bogor, Jawa Barat</li>
                         <li><i class="fas fa-clock"></i> Senin - Sabtu: 08:00 - 18:00</li>
@@ -1753,7 +1799,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Reska Renovation & Cleaning. Semua hak dilindungi undang-undang.</p>
+                <p>&copy; 2025 Rima Graha Design Contraktor & Maintenance Properti. Semua hak dilindungi undang-undang.</p>
                 <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b35;"></i> untuk properti Indonesia yang lebih baik</p>
             </div>
         </div>
