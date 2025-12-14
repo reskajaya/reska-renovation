@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Portofolio - Reska Renovation & Cleaning — Solusi Profesional Renovasi & Kebersihan Properti</title>
-  <meta name="description" content="Lihat portofolio hasil pekerjaan renovasi dan cleaning kami. Bukti kualitas kerja profesional untuk properti Anda.">
+  <title>Portofolio - Rima Graha 16 — Solusi Lengkap Design & Contractor Properti</title>
+  <meta name="description" content="Lihat portofolio hasil pekerjaan design, kontraktor, dan maintenance properti kami. Bukti kualitas kerja profesional untuk properti Anda.">
   <meta name="theme-color" content="#0f4c5c">
-  <meta name="author" content="Reska Renovation & Cleaning">
-  <meta name="keywords" content="portofolio renovasi, hasil cleaning, galeri pekerjaan, sebelum sesudah renovasi">
-  <meta property="og:title" content="Portofolio - Reska Renovation & Cleaning — Hasil Pekerjaan Kami">
-  <meta property="og:description" content="Kumpulan hasil pekerjaan renovasi dan cleaning terbaik kami">
+  <meta name="author" content="Rima Graha 16">
+  <meta name="keywords" content="portofolio renovasi, hasil cleaning, galeri pekerjaan, sebelum sesudah renovasi, design kontraktor">
+  <meta property="og:title" content="Portofolio - Rima Graha 16 — Hasil Pekerjaan Kami">
+  <meta property="og:description" content="Kumpulan hasil pekerjaan design, kontraktor, renovasi, dan cleaning terbaik kami">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -259,25 +259,25 @@
       height: 100%;
     }
 
+    /* ===== LOGO STYLES ===== */
     .logo {
       display: flex;
       align-items: center;
       gap: 12px;
+      height: 100%;
     }
 
-    .logo-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      border-radius: var(--radius-md);
+    .logo-image {
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 20px;
-      box-shadow: var(--shadow-sm);
-      flex-shrink: 0;
+      height: 100%;
+    }
+
+    .logo-image img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      transition: var(--transition);
     }
 
     .logo-text h1 {
@@ -295,48 +295,90 @@
       font-weight: 500;
       line-height: 1.2;
     }
-/* ===== LOGO UPDATE ===== */
-.logo-image {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
 
-.logo-image img {
-  height: 50px; /* Sesuaikan tinggi logo */
-  width: auto;
-  max-height: 100%;
-}
+    /* Logo adjustments for scroll */
+    header.scrolled .logo-image img {
+      height: 45px;
+    }
 
-.full-logo {
-  height: 50px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
+    header.scrolled .logo-text h1 {
+      font-size: 17px;
+    }
 
-/* Remove icon if using image logo */
-.logo-icon {
-  display: none;
-}
+    header.scrolled .logo-text p {
+      font-size: 10px;
+    }
 
-/* Adjust text for logo-only design */
-.logo-text h1 {
-  font-size: 20px;
-  margin-bottom: 4px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.2;
-}
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .logo {
+        gap: 10px;
+      }
+      
+      .logo-image img {
+        height: 45px;
+      }
+      
+      .logo-text h1 {
+        font-size: 16px;
+      }
+      
+      .logo-text p {
+        font-size: 10px;
+      }
+      
+      header.scrolled .logo-image img {
+        height: 40px;
+      }
+      
+      header.scrolled .logo-text h1 {
+        font-size: 15px;
+      }
+    }
 
-.logo-text p {
-  font-size: 12px;
-  color: var(--gray);
-  font-weight: 500;
-  line-height: 1.2;
-}
-    /* Mobile Toggle - PERBAIKAN */
+    @media (max-width: 576px) {
+      .logo {
+        gap: 8px;
+      }
+      
+      .logo-image img {
+        height: 40px;
+      }
+      
+      .logo-text h1 {
+        font-size: 15px;
+        margin-bottom: 2px;
+      }
+      
+      .logo-text p {
+        font-size: 9px;
+      }
+      
+      header.scrolled .logo-image img {
+        height: 35px;
+      }
+      
+      header.scrolled .logo-text h1 {
+        font-size: 14px;
+      }
+      
+      header.scrolled .logo-text p {
+        font-size: 8px;
+      }
+    }
+
+    /* Untuk layar sangat kecil */
+    @media (max-width: 400px) {
+      .logo-text h1 {
+        font-size: 14px;
+      }
+      
+      .logo-text p {
+        display: none; /* Sembunyikan deskripsi di layar sangat kecil */
+      }
+    }
+
+    /* Mobile Toggle */
     .mobile-toggle {
       display: none;
       font-size: 22px;
@@ -601,7 +643,7 @@
       font-size: 16px;
     }
 
-    /* ===== MODAL FOR FULL VIEW ===== */
+    /* ===== MODAL FOR FULL VIEW - FIXED FOR MOBILE ===== */
     .modal {
       display: none;
       position: fixed;
@@ -611,18 +653,19 @@
       height: 100%;
       background: rgba(0, 0, 0, 0.95);
       z-index: 1000;
-      overflow-y: auto;
-      padding: 20px;
+      overflow-y: auto; /* PERBAIKAN: Biarkan scroll */
+      -webkit-overflow-scrolling: touch; /* Smooth scroll untuk iOS */
     }
 
     .modal-content {
       max-width: 1200px;
-      margin: 40px auto;
+      margin: 0 auto;
       background: white;
       border-radius: var(--radius);
       overflow: hidden;
       animation: modalFade 0.3s ease;
       position: relative;
+      min-height: 100vh; /* Pastikan konten setinggi viewport */
     }
 
     @keyframes modalFade {
@@ -633,7 +676,7 @@
     .modal-header {
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
-      padding: 25px;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -671,8 +714,7 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 15px;
       padding: 25px;
-      max-height: 70vh;
-      overflow-y: auto;
+      overflow-y: visible; /* PERBAIKAN: Ubah dari auto ke visible */
     }
 
     .modal-photo {
@@ -952,9 +994,40 @@
         font-size: 26px;
       }
       
-      .modal-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      /* MODAL RESPONSIVE FIX */
+      .modal {
+        padding: 10px;
+      }
+      
+      .modal-content {
+        margin: 10px auto;
+        border-radius: 15px;
+      }
+      
+      .modal-header {
         padding: 15px;
+        position: sticky;
+        top: 0;
+      }
+      
+      .modal-header h2 {
+        font-size: 20px;
+      }
+      
+      .btn-close {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+      }
+      
+      .modal-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+        gap: 10px;
+        padding: 15px;
+      }
+      
+      .modal-photo {
+        aspect-ratio: 4/3;
       }
       
       section {
@@ -999,8 +1072,28 @@
         padding: 0 15px;
       }
       
+      /* MODAL RESPONSIVE FIX - MOBILE */
+      .modal {
+        padding: 5px;
+      }
+      
+      .modal-content {
+        margin: 5px auto;
+        border-radius: 10px;
+      }
+      
       .modal-grid {
-        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 8px;
+      }
+      
+      .modal-photo {
+        aspect-ratio: 3/4;
+      }
+      
+      .photo-info {
+        padding: 10px;
+        font-size: 12px;
       }
       
       .logo-icon {
@@ -1089,7 +1182,7 @@
 <body>
   <!-- WhatsApp Floating Button -->
   <div class="whatsapp-float">
-    <a href="https://wa.me/6287831750310?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20tertarik%20dengan%20portofolio%20Anda" 
+    <a href="https://wa.me/6285210453311?text=Halo%20Rima%20Graha%2016,%20saya%20tertarik%20dengan%20portofolio%20Anda" 
        target="_blank" 
        class="whatsapp-button"
        aria-label="Chat via WhatsApp">
@@ -1102,35 +1195,33 @@
     <div class="container header-container">
       <div class="logo">
         <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
-          <div class="logo">
-  <div class="logo-image">
-    <img src="logo-rimagraha.jpg" alt="Rima Graha 16" class="full-logo">
-  </div>
-</div>
+          <div class="logo-image">
+            <img src="logo-rimagraha.jpg" alt="Rima Graha 16" class="full-logo">
+          </div>
           <div class="logo-text">
             <h1>Rima Graha 16</h1>
-          <p>Design Contraktor & Maintenance Properti</p>
+            <p>Design Contraktor & Maintenance Properti</p>
           </div>
         </a>
       </div>
       
-      <!-- PERBAIKAN: Tombol toggle dengan atribut aksesibilitas -->
+      <!-- Tombol toggle mobile -->
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" 
               aria-expanded="false" aria-controls="navMenu" role="button">
         <i class="fas fa-bars"></i>
       </button>
       
-      <!-- PERBAIKAN: Menu navigasi -->
+      <!-- Menu navigasi -->
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link">Layanan</a>
         <a href="portofolio.html" class="nav-link">Portofolio</a>
-        <a href="packages.html " class="nav-link">Paket</a>
+        <a href="packages.html" class="nav-link">Paket</a>
         <a href="proses-kerja.html" class="nav-link">Proses Kerja</a>
         <a href="tentang.html" class="nav-link">Tentang Kami</a>
         <a href="#contact" class="nav-link">Kontak</a>
-        <a href="faq.html" class="nav-link">Faq page</a>
-        <a href="https://wa.me/6287831750310" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-whatsapp" style="font-size: 14px; padding: 10px 15px;">
           <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
       </nav>
@@ -1142,12 +1233,12 @@
     <div class="container">
       <div class="fade-in">
         <h1>📁 Portofolio Pekerjaan Kami</h1>
-        <p>Lihat kumpulan hasil pekerjaan renovasi, cleaning, dan maintenance properti yang telah kami selesaikan dengan hasil maksimal. Setiap project dikelompokkan dalam folder untuk memudahkan navigasi.</p>
+        <p>Lihat kumpulan hasil pekerjaan design, kontraktor, renovasi, dan maintenance properti yang telah kami selesaikan dengan hasil maksimal. Setiap project dikelompokkan dalam folder untuk memudahkan navigasi.</p>
         <div class="flex gap-3 flex-wrap">
           <a href="#portfolio" class="btn btn-primary">
             <i class="fas fa-images"></i> Lihat Portofolio
           </a>
-          <a href="https://wa.me/6287831750310" target="_blank" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">
+          <a href="https://wa.me/6285210453311" target="_blank" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: white;">
             <i class="fas fa-calendar-alt"></i> Konsultasi Project
           </a>
         </div>
@@ -1208,7 +1299,7 @@
           Jadikan properti Anda berikutnya dalam portofolio kami. Hubungi kami untuk konsultasi gratis dan penawaran terbaik.
         </p>
         <div class="flex justify-center gap-3 flex-wrap">
-          <a href="https://wa.me/6287831750310?text=Halo%20Reska%20Renovation%20%26%20Cleaning,%20saya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20konsultasi%20project" 
+          <a href="https://wa.me/6285210453311?text=Halo%20Rima%20Graha%2016,%20saya%20tertarik%20dengan%20portofolio%20Anda%20dan%20ingin%20konsultasi%20project" 
              target="_blank" class="btn" style="background: white; color: var(--primary);">
             <i class="fab fa-whatsapp"></i> WhatsApp Sekarang
           </a>
@@ -1227,11 +1318,11 @@
         <div class="footer-about">
           <div class="footer-logo">
             <div class="logo-image">
-          <img src="logo-rimagraha.jpg" alt="Rima Graha 16" class="full-logo">
-         </div>
+              <img src="logo-rimagraha.jpg" alt="Rima Graha 16" style="height: 40px; width: auto; margin-bottom: 15px;">
+            </div>
           </div>
           <p class="footer-description">
-            Rima Graha Design Contraktor & Maintenance Properti menyediakan jasa renovasi, perawatan properti, dan general cleaning profesional dengan hasil maksimal dan harga terjangkau sejak 2020.
+            Rima Graha 16 menyediakan solusi lengkap untuk design, kontraktor, renovasi, dan maintenance properti dengan hasil maksimal dan harga terjangkau sejak 2020.
           </p>
         </div>
         
@@ -1261,7 +1352,6 @@
           <h4 class="footer-title">Kontak</h4>
           <ul class="footer-links">
             <li><i class="fas fa-phone-alt"></i> 0852-1045-3311</li>
-            <li><i class="fas fa-phone-alt"></i> 0878-3175-0310</li>
             <li><i class="fas fa-envelope"></i> reskajaya34@gmail.com</li>
             <li><i class="fas fa-map-marker-alt"></i> Parung Bogor, Jawa Barat</li>
             <li><i class="fas fa-clock"></i> Senin - Sabtu: 08:00 - 18:00</li>
@@ -1270,7 +1360,7 @@
       </div>
       
       <div class="copyright">
-        <p>&copy; 2025 Rima Graha Design Contraktor & Maintenance Properti. Semua hak dilindungi undang-undang.</p>
+        <p>&copy; 2025 Rima Graha 16. Semua hak dilindungi undang-undang.</p>
         <p>Dibuat dengan <i class="fas fa-heart" style="color: #ff6b35;"></i> untuk properti Indonesia yang lebih baik</p>
       </div>
     </div>
@@ -1292,7 +1382,7 @@
   </div>
 
   <script>
-    // Portfolio Data - SEMUA PATH DIPERBAIKI
+    // Portfolio Data
     const portfolioData = [
       {
         id: 1,
@@ -1303,32 +1393,32 @@
         photoCount: 6,
         photos: [
           { 
-            url: "https://i.ibb.co.com/1YzDnvs6/dropceiling.jpg", // PATH DIPERBAIKI
+            url: "https://i.ibb.co.com/1YzDnvs6/dropceiling.jpg",
             title: "Pemasangan Drop Ceiling",
             description: "Proses pemasangan drop ceiling gypsum"
           },
           { 
-            url: "https://i.ibb.co.com/DDtQ6Txb/finishing.png", // PATH DIPERBAIKI
+            url: "https://i.ibb.co.com/DDtQ6Txb/finishing.png",
             title: "Proses Finishing",
             description: "Pekerjaan finishing interior"
           },
           { 
-            url: "https://i.ibb.co.com/bg0CV6LJ/Pengecatan-Interior.png", // PATH DIPERBAIKI
+            url: "https://i.ibb.co.com/bg0CV6LJ/Pengecatan-Interior.png",
             title: "Pengecatan Interior",
             description: "Pengecatan dinding dan plafon"
           },
           { 
-            url: "https://i.ibb.co.com/ccDzBXNM/pemasangan-lantai.png", // PATH DIPERBAIKI
+            url: "https://i.ibb.co.com/ccDzBXNM/pemasangan-lantai.png",
             title: "Pemasangan Lantai",
             description: "Instalasi keramik lantai baru"
           },
           { 
-            url: "https://i.ibb.co.com/5gZ3GbNF/bathroom.png", // PATH DIPERBAIKI
+            url: "https://i.ibb.co.com/5gZ3GbNF/bathroom.png",
             title: "Renovasi Kamar Mandi",
             description: "Kamar mandi baru dengan desain modern"
           },
           { 
-            url: "https://i.ibb.co.com/YFDs6Q5v/Renovasi-rumah.jpg", // PATH DIPERBAIKI
+            url: "https://i.ibb.co.com/YFDs6Q5v/Renovasi-rumah.jpg",
             title: "Renovasi Rumah Total",
             description: "Renovasi Rumah Total dengan desain modern"
           },
@@ -1383,12 +1473,12 @@
         photoCount: 4,
         photos: [
           { 
-            url: "https://i.ibb.co.com/8gBRrF6w/kamarmandi.png", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/8gBRrF6w/kamarmandi.png",
             title: "Hasil Renovasi",
             description: "Kamar mandi setelah renovasi"
           },
           { 
-            url: "https://i.ibb.co.com/Ps1XnLhR/pemsangan-keramik.png", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/Ps1XnLhR/pemsangan-keramik.png",
             title: "Pemasangan Keramik",
             description: "Proses instalasi keramik dinding"
           },
@@ -1448,17 +1538,17 @@
         photoCount: 4,
         photos: [
           { 
-            url: "https://i.ibb.co.com/bg0CV6LJ/Pengecatan-Interior.png", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/bg0CV6LJ/Pengecatan-Interior.png",
             title: "Pengecatan Interior",
             description: "Proses pengecatan dinding"
           },
           { 
-            url: "https://i.ibb.co.com/pvz745Qx/dropceiling.png", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/pvz745Qx/dropceiling.png",
             title: "Pemasangan Plafon",
             description: "Instalasi plafon gypsum"
           },
           { 
-            url: "https://i.ibb.co.com/RmkcCPX/finishing.jpg", // Gunakan gambar Anda sendiri
+            url: "https://i.ibb.co.com/RmkcCPX/finishing.jpg",
             title: "Finishing Detail",
             description: "Detail pekerjaan finishing"
           },
@@ -1514,11 +1604,9 @@
         fallbackDiv.className = 'image-fallback';
         fallbackDiv.innerHTML = `<span>${fallbackText}</span>`;
         
-        // Replace the image with fallback
         parent.innerHTML = '';
         parent.appendChild(fallbackDiv);
         
-        // Log error for debugging
         console.warn(`Gambar gagal dimuat: ${imgElement.src}`);
       }
     }
@@ -1529,19 +1617,15 @@
       folderCard.className = 'folder-card fade-in';
       folderCard.setAttribute('data-category', folder.category);
       
-      // Get first 9 photos for thumbnail grid
       const thumbnailPhotos = folder.photos.slice(0, 9);
       
-      // Set category icon
       let categoryIcon = '🏠';
       if (folder.category === 'cleaning') categoryIcon = '🧹';
       if (folder.category === 'maintenance') categoryIcon = '🔧';
       
-      // Create folder content
       const folderContent = document.createElement('div');
       folderContent.className = 'folder-content';
       
-      // Add thumbnails
       thumbnailPhotos.forEach(photo => {
         const thumbDiv = document.createElement('div');
         thumbDiv.className = 'folder-thumb';
@@ -1551,7 +1635,6 @@
         img.alt = photo.title;
         img.loading = 'lazy';
         
-        // Add error handler
         img.onerror = () => handleImageError(img, photo.title);
         
         thumbDiv.appendChild(img);
@@ -1568,7 +1651,6 @@
       
       folderCard.appendChild(folderContent);
       
-      // Add folder actions
       const folderActions = document.createElement('div');
       folderActions.className = 'folder-actions';
       folderActions.innerHTML = `
@@ -1589,7 +1671,6 @@
       const grid = document.getElementById('portfolioGrid');
       const errorMessage = document.getElementById('errorMessage');
       
-      // Clear existing content
       grid.innerHTML = '';
       
       let hasError = false;
@@ -1604,14 +1685,12 @@
         }
       });
       
-      // Show error message if any
       if (hasError) {
         errorMessage.style.display = 'block';
       } else {
         errorMessage.style.display = 'none';
       }
       
-      // Initialize animations
       initAnimations();
     }
 
@@ -1630,7 +1709,6 @@
         }
       });
       
-      // Show/hide empty state
       if (visibleCount === 0) {
         emptyState.style.display = 'block';
       } else {
@@ -1638,7 +1716,7 @@
       }
     }
 
-    // Open Folder Modal
+    // Open Folder Modal - FIXED FOR MOBILE SCROLL
     function openFolder(folderId) {
       const folder = portfolioData.find(f => f.id === folderId);
       if (!folder) return;
@@ -1647,10 +1725,8 @@
       const modalTitle = document.getElementById('modalTitle');
       const modalGrid = document.getElementById('modalGrid');
       
-      // Set modal title
       modalTitle.textContent = `${folder.title} - ${folder.photoCount} Foto`;
       
-      // Clear and populate modal grid
       modalGrid.innerHTML = '';
       
       folder.photos.forEach((photo, index) => {
@@ -1661,8 +1737,11 @@
         img.src = photo.url;
         img.alt = photo.title;
         img.loading = 'lazy';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
         
-        // Add error handler for modal images
+        // Error handling untuk gambar
         img.onerror = function() {
           this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzBmNGM1YyIvPjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5HQU1CQVIgVElEQUsgVkVSU0VESUE8L3RleHQ+PHRleHQgeD0iMjAwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPiR7cGhvdG8udGl0bGV9PC90ZXh0Pjwvc3ZnPg==';
         };
@@ -1679,16 +1758,30 @@
         modalGrid.appendChild(photoElement);
       });
       
-      // Show modal
+      // PERBAIKAN: Scroll ke atas sebelum menampilkan modal
+      modal.scrollTop = 0;
+      
+      // Tampilkan modal dengan body scroll tetap aktif
       modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
+      
+      // Biarkan body bisa scroll (tidak di-lock)
+      document.body.style.overflow = 'hidden'; // Lock sementara saat modal terbuka
+      
+      // Event listener untuk touch/move di modal (untuk mobile)
+      modal.addEventListener('touchmove', function(e) {
+        // Biarkan scroll di dalam modal
+        e.stopPropagation();
+      }, { passive: true });
     }
 
     // Close Modal
     function closeModal() {
       const modal = document.getElementById('photoModal');
       modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'auto'; // Kembalikan scroll body
+      
+      // Hapus event listener
+      modal.removeEventListener('touchmove', () => {});
     }
 
     // ========== HEADER SCROLL EFFECT ==========
@@ -1706,7 +1799,7 @@
       }
     }
 
-    // ========== MOBILE NAVIGATION - PERBAIKAN ==========
+    // ========== MOBILE NAVIGATION ==========
     function initMobileNavigation() {
       const mobileToggle = document.getElementById('mobileToggle');
       const navMenu = document.getElementById('navMenu');
@@ -1714,9 +1807,8 @@
       const body = document.body;
       
       if (mobileToggle && navMenu) {
-        // Toggle menu dengan efek smooth
         mobileToggle.addEventListener('click', (e) => {
-          e.stopPropagation(); // Mencegah bubbling
+          e.stopPropagation();
           
           const isActive = navMenu.classList.toggle('active');
           mobileToggle.classList.toggle('active');
@@ -1724,10 +1816,8 @@
             ? '<i class="fas fa-times"></i>' 
             : '<i class="fas fa-bars"></i>';
           
-          // Update ARIA attribute
           mobileToggle.setAttribute('aria-expanded', isActive);
           
-          // Mencegah scroll body saat menu terbuka
           if (isActive) {
             body.style.overflow = 'hidden';
           } else {
@@ -1735,30 +1825,25 @@
           }
         });
         
-        // Close menu when clicking a link - dengan animasi lebih cepat
         navLinks.forEach(link => {
           link.addEventListener('click', (e) => {
-            // Jika link adalah anchor ke section di halaman yang sama
             if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
               e.preventDefault();
               const targetId = link.getAttribute('href');
               const targetElement = document.querySelector(targetId);
               
-              // Tutup menu terlebih dahulu
               navMenu.classList.remove('active');
               mobileToggle.classList.remove('active');
               mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
               mobileToggle.setAttribute('aria-expanded', 'false');
               body.style.overflow = '';
               
-              // Scroll ke target dengan delay kecil
               setTimeout(() => {
                 if (targetElement) {
                   targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
               }, 300);
             } else {
-              // Untuk link ke halaman lain, tutup menu saja
               navMenu.classList.remove('active');
               mobileToggle.classList.remove('active');
               mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -1768,9 +1853,7 @@
           });
         });
         
-        // Close menu when clicking outside - RESPONSIF
         document.addEventListener('click', (e) => {
-          // Jika klik di luar menu dan tombol toggle
           if (navMenu.classList.contains('active') && 
               !navMenu.contains(e.target) && 
               !mobileToggle.contains(e.target)) {
@@ -1782,7 +1865,6 @@
           }
         });
         
-        // Close menu with Escape key
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
@@ -1793,7 +1875,6 @@
           }
         });
         
-        // Handle window resize
         window.addEventListener('resize', () => {
           if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
@@ -1822,7 +1903,6 @@
         });
       }, observerOptions);
       
-      // Observe all fade-in elements
       document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
       });
@@ -1830,42 +1910,55 @@
 
     // ========== INITIALIZATION ==========
     function init() {
-      // Initialize portfolio
       initPortfolio();
       initHeaderScroll();
       initMobileNavigation();
       
-      // Filter buttons event listeners
       document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
-          // Remove active class from all buttons
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          
-          // Add active class to clicked button
           this.classList.add('active');
           
-          // Filter portfolio
           const filter = this.getAttribute('data-filter');
           filterPortfolio(filter);
         });
       });
       
-      // Modal event listeners
       document.getElementById('closeModal').addEventListener('click', closeModal);
       
-      // Close modal when clicking outside content
       document.getElementById('photoModal').addEventListener('click', function(e) {
         if (e.target === this) {
           closeModal();
         }
       });
       
-      // Close modal with Escape key
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
           closeModal();
         }
       });
+      
+      // Touch events untuk mobile
+      let touchStartY = 0;
+      let touchEndY = 0;
+      
+      document.addEventListener('touchstart', function(e) {
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+      
+      document.addEventListener('touchend', function(e) {
+        touchEndY = e.changedTouches[0].screenY;
+        // Jika swipe down di area atas modal, close modal
+        if (touchEndY - touchStartY > 100) {
+          const modal = document.getElementById('photoModal');
+          if (modal.style.display === 'block') {
+            const modalRect = modal.getBoundingClientRect();
+            if (touchStartY < modalRect.top + 100) { // Jika mulai di area atas modal
+              closeModal();
+            }
+          }
+        }
+      }, { passive: true });
     }
 
     // ========== START APPLICATION ==========
@@ -1877,6 +1970,3 @@
   </script>
 </body>
 </html>
-
-
-
